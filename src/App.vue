@@ -1,6 +1,6 @@
 <template>
   <body class="bg-lace h-100vh text-dark-blue">
-    <header class="bg-dark-blue">
+    <header @click="view = View.Home" class="bg-dark-blue">
       <div class="mx-3">
         <h1 class="text-lace">Blind sats</h1>
       </div>
