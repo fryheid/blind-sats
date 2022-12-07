@@ -1,12 +1,45 @@
+@import url("https://fonts.googleapis.com/css?family=Mulish&display=swap");
+
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  font-family: "Mulish";
+}
+
 .bg-orange {
-  background-color: #FE9900;
+  background-color: #fe9900;
 }
 .bg-lace {
-  background-color: #FFF7E9;
+  background-color: #fff7e9;
 }
 .bg-light-blue {
-  background-color: #5F9DF7;
+  background-color: #5f9df7;
 }
 .bg-dark-blue {
-  background-color: #1746A2;
+  background-color: #1746a2;
+}
+
+.text-orange {
+  color: #fe9900;
+}
+.text-lace {
+  color: #fff7e9;
+}
+.text-light-blue {
+  color: #5f9df7;
+}
+.text-dark-blue {
+  color: #1746a2;
+}
+
+.mx-3 {
+  margin-left: .75rem;
+  margin-right: .75rem;
+}
+
+.h-100vh {
+  height: 100vh;
 }
