@@ -6,28 +6,15 @@
       </div>
     </header>
     <main>
-      <ul class="list-unstyled">
-        <li
-          v-for="wallet in wallets"
-          :key="wallet.wallet_name"
-          class="flex justify-between border-bottom border-brown p-3"
-        >
-          <img
-            class="round h-60px minw-60px border border-brown"
-            :src="`https://asats.io/anonsats/robohash/${wallet.wallet_name}`"
-          />
-          <div class="flex flex-column align-end">
-            <h2>{{ wallet.wallet_name }}</h2>
-            <p>{{ wallet.initial_balance }} sats</p>
-          </div>
-        </li>
-      </ul>
+      <p v-if="!wallets.length" class="mt-3 mx-3">No wallet found. Please create a wallet.</p>
+      <Wallets v-else :wallets="wallets" />
     </main>
   </body>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
+import Wallets from "./components/Wallets.vue"
 
 const wallets = ref([
   {
