@@ -1,5 +1,5 @@
 <template>
-  <body class="bg-lace h-100vh">
+  <body class="bg-lace h-100vh text-dark-blue">
     <header class="bg-dark-blue">
       <div class="mx-3">
         <h1 class="text-lace">Blind sats</h1>
@@ -10,10 +10,10 @@
         <li
           v-for="wallet in wallets"
           :key="wallet.wallet_name"
-          class="flex justify-between border-bottom p-3"
+          class="flex justify-between border-bottom border-brown p-3"
         >
           <img
-            class="round h-60px minw-60px"
+            class="round h-60px minw-60px border border-brown"
             :src="`https://asats.io/anonsats/robohash/${wallet.wallet_name}`"
           />
           <div class="flex flex-column align-end">
@@ -38,7 +38,7 @@ const wallets = ref([
   },
   {
     wallet_key: "test-key",
-    wallet_name: "test-wallet",
+    wallet_name: "test-wallet2",
     lightning_address: "test@asats.io",
     initial_balance: 0,
   },
