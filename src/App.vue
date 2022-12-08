@@ -6,8 +6,6 @@
       <div class="mx-3">
         <h1 class="text-lace text-3xl font-extralight">Blind sats</h1>
       </div>
-      <div class="">
-      </div>
     </header>
     <main
       class="container mx-auto max-w-screen-sm shadow-2xl relative overflow-y-auto"
