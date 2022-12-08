@@ -21,5 +21,5 @@
 <script setup lang="ts">
 import { View } from "../enum/view";
 
-defineEmits(["setView"]);
+defineEmits(["setView", "createNewWallet"]);
 </script>
