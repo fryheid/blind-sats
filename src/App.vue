@@ -23,7 +23,23 @@
       </template>
 
       <template v-else-if="view === View.Wallet">
-        <p>Placeholder</p>
+        <div class="h-full mx-3 pt-3 relative">
+          <h2 class="text-3xl font-black">{{ currentWallet.wallet_name }}</h2>
+          <p>{{ currentWallet.initial_balance }} sats</p>
+
+          <h3 class="text-2xl font-bold">Receive</h3>
+          <p>{{ currentWallet.lightning_address }}</p>
+
+          <button type="button" class="bg-light-blue text-lace text-xl p-3">Send sats</button>
+          
+          <button
+            @click="$emit('setView', View.Home)"
+            type="button"
+            class="absolute bottom-3 left-0"
+          >
+            ← back
+          </button>
+        </div>
       </template>
     </main>
   </body>
@@ -142,5 +158,9 @@ function walletCreate() {
     lightning_address: "test@asats.io",
     initial_balance: 0,
   };
+}
+
+function walletBalance(wallet_key: string) {
+  return 0;
 }
 </script>
