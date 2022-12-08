@@ -6,11 +6,13 @@
         piece of paper (don't store it digitally)
       </p>
 
-      <p class="font-bold mt-3">Wallet name</p>
-      <p>{{ currentWallet.wallet_name }}</p>
+      <div class="text-xl">
+        <p class="font-bold mt-3">Wallet name</p>
+        <p>{{ currentWallet.wallet_name }}</p>
 
-      <p class="font-bold mt-3">Wallet key</p>
-      <p>{{ currentWallet.wallet_key }}</p>
+        <p class="font-bold mt-3">Wallet key</p>
+        <p>{{ currentWallet.wallet_key }}</p>
+      </div>
     </section>
 
     <section>
