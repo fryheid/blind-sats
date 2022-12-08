@@ -23,24 +23,9 @@
         </button>
       </template>
 
-      <div
-        v-else-if="view === View.AddWallet"
-        class="h-full flex flex-col items-center justify-center relative mx-3 mt-3"
-      >
-        <span @click="setView(View.Home)" class="absolute top-0 left-0"
-          >← back</span
-        >
-        <button
-          type="button"
-          @click="createNewWallet"
-          class="w-full bg-light-blue text-lace text-xl p-3"
-        >
-          Create a new wallet
-        </button>
-        <button class="text-light-blue underline mt-3">
-          Or import an already existing wallet
-        </button>
-      </div>
+      <template v-else-if="view === View.AddWallet">
+        <AddWallet @set-view="setView" @create-new-wallet="createNewWallet" />
+      </template>
 
       <template v-else-if="view === View.NewWallet">
         <NewWallet @set-view="setView" :current-wallet="currentWallet" />
@@ -57,6 +42,7 @@
 import { ref, onMounted } from "vue";
 import { View } from "./enum/view";
 import Wallets from "./components/Wallets.vue";
+import AddWallet from "./components/AddWallet.vue";
 import NewWallet from "./components/NewWallet.vue";
 
 const view = ref(View.Home);
