@@ -1,5 +1,5 @@
 <template>
-  <body class="bg-lace h-100vh text-dark-blue">
+  <body class="bg-lace h-screen text-dark-blue">
     <header @click="view = View.Home" class="bg-dark-blue">
       <div class="mx-3">
         <h1 class="text-lace">Blind sats</h1>
@@ -12,7 +12,9 @@
         </p>
         <Wallets v-else :wallets="wallets" />
 
-        <div @click="view = View.AddWallet" class="bg-orange round text-lace absolute bottom-1vh right-1vh px-3 py-2">+</div>
+        <button type="button" @click="view = View.AddWallet" class="bg-orange rounded-full text-lace absolute bottom-[1vh] right-[1vh] px-3 p-3">
+          <img src="/plus.svg" />
+        </button>
       </template>
 
       <p v-else-if="view === View.AddWallet">Add wallet</p>
