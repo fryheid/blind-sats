@@ -3,6 +3,7 @@
     <li
       v-for="wallet in wallets"
       :key="wallet.wallet_name"
+      @click="$emit('openWallet', wallet)"
       class="border-b-[1px] border-brown"
     >
       <button type="button" class="w-full flex justify-between p-3">
@@ -21,4 +22,5 @@
 
 <script setup lang="ts">
 defineProps(["wallets"]);
+defineEmits(["openWallet"]);
 </script>

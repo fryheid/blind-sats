@@ -11,7 +11,7 @@
       class="container mx-auto max-w-screen-sm shadow-2xl relative overflow-y-auto"
     >
       <template v-if="view === View.Home">
-        <Home @set-view="setView" :wallets="wallets" />
+        <Home @set-view="setView" @open-wallet="openWallet" :wallets="wallets" />
       </template>
 
       <template v-else-if="view === View.AddWallet">
@@ -23,23 +23,7 @@
       </template>
 
       <template v-else-if="view === View.Wallet">
-        <div class="h-full mx-3 pt-3 relative">
-          <h2 class="text-3xl font-black">{{ currentWallet.wallet_name }}</h2>
-          <p>{{ currentWallet.initial_balance }} sats</p>
-
-          <h3 class="text-2xl font-bold">Receive</h3>
-          <p>{{ currentWallet.lightning_address }}</p>
-
-          <button type="button" class="bg-light-blue text-lace text-xl p-3">Send sats</button>
-          
-          <button
-            @click="$emit('setView', View.Home)"
-            type="button"
-            class="absolute bottom-3 left-0"
-          >
-            ← back
-          </button>
-        </div>
+        <Wallet @set-view="setView" :wallet="currentWallet" />
       </template>
     </main>
   </body>
@@ -51,6 +35,7 @@ import { View } from "./enum/view";
 import Home from "./components/Home.vue";
 import AddWallet from "./components/AddWallet.vue";
 import NewWallet from "./components/NewWallet.vue";
+import Wallet from "./components/Wallet.vue";
 
 const view = ref(View.Home);
 
@@ -160,7 +145,8 @@ function walletCreate() {
   };
 }
 
-function walletBalance(wallet_key: string) {
-  return 0;
+function openWallet(wallet: Object) {
+  currentWallet.value = wallet;
+  view.value = View.Wallet;
 }
 </script>
