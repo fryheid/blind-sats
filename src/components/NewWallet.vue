@@ -29,3 +29,7 @@
     </section>
   </div>
 </template>
+
+<script>
+defineProps(["currentWallet"]);
+</script>

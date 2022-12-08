@@ -45,7 +45,7 @@
       </div>
 
       <template v-else-if="view === View.NewWallet">
-        <NewWallet />
+        <NewWallet :current-wallet="currentWallet" />
       </template>
     </main>
   </body>
