@@ -7,7 +7,7 @@
   <button
     type="button"
     @click="$emit('setView', View.AddWallet)"
-    class="bg-orange rounded-full text-lace absolute bottom-[1vh] right-[1vh] px-3 p-3"
+    class="bg-orange rounded-full text-lace absolute bottom-3 right-3 px-3 p-3"
   >
     <img src="/plus.svg" />
   </button>
