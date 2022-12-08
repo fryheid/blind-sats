@@ -1,8 +1,10 @@
 <template>
   <body class="bg-lace h-screen text-dark-blue">
-    <header @click="view = View.Home" class="bg-dark-blue">
+    <header class="bg-dark-blue">
       <div class="mx-3">
-        <h1 class="text-lace">Blind sats</h1>
+        <button type="button" @click="view = View.Home">
+          <h1 class="text-lace text-3xl">Blind sats</h1>
+        </button>
       </div>
     </header>
     <main>
