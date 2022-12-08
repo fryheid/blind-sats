@@ -3,16 +3,18 @@
     <li
       v-for="wallet in wallets"
       :key="wallet.wallet_name"
-      class="flex justify-between border-b-[1px] border-brown p-3"
+      class="border-b-[1px] border-brown"
     >
-      <img
-        class="rounded-full h-[60px] min-w-[60px] border-[1px] border-brown"
-        :src="`https://asats.io/anonsats/robohash/${wallet.wallet_name}`"
-      />
-      <div class="flex flex-col items-end">
-        <h2 class="text-lg font-bold">{{ wallet.wallet_name }}</h2>
-        <p>{{ wallet.initial_balance }} sats</p>
-      </div>
+      <button type="button" class="w-full flex justify-between p-3">
+        <img
+          class="rounded-full h-[60px] min-w-[60px] border-[1px] border-brown"
+          :src="`https://asats.io/anonsats/robohash/${wallet.wallet_name}`"
+        />
+        <div class="flex flex-col items-end">
+          <h2 class="text-lg font-bold">{{ wallet.wallet_name }}</h2>
+          <p>{{ wallet.initial_balance }} sats</p>
+        </div>
+      </button>
     </li>
   </ul>
 </template>
