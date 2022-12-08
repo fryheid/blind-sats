@@ -3,13 +3,15 @@
     class="bg-lace h-screen mh-screen text-dark-blue grid grid-rows-[min-content_1fr]"
   >
     <header class="bg-dark-blue container mx-auto max-w-screen-sm">
-        <div class="mx-3">
-          <h1 class="text-lace text-3xl font-extralight">Blind sats</h1>
-        </div>
+      <div class="mx-3">
+        <h1 class="text-lace text-3xl font-extralight">Blind sats</h1>
+      </div>
       <div class="">
       </div>
     </header>
-    <main class="container mx-auto max-w-screen-sm shadow-2xl relative overflow-y-auto">
+    <main
+      class="container mx-auto max-w-screen-sm shadow-2xl relative overflow-y-auto"
+    >
       <template v-if="view === View.Home">
         <Home @set-view="setView" :wallets="wallets" />
       </template>
