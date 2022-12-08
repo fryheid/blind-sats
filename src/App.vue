@@ -34,6 +34,7 @@
         >
         <button
           type="button"
+          @click="createNewWallet"
           class="w-full bg-light-blue text-lace text-xl p-3"
         >
           Create a new wallet
@@ -41,6 +42,44 @@
         <button class="text-light-blue underline mt-3">
           Or import an already existing wallet
         </button>
+      </div>
+
+      <div
+        v-else-if="view === View.NewWallet"
+        class="h-full flex flex-col justify-between mx-3 py-3"
+      >
+        <section>
+          <p>
+            This is your new wallet! Write down your wallet name and wallet key on a
+            piece of paper (don't store it digitally)
+          </p>
+
+          <p class="font-bold mt-3">Wallet name</p>
+          <p>{{ currentWallet.wallet_name }}</p>
+
+          <p class="font-bold mt-3">Wallet key</p>
+          <p>{{ currentWallet.wallet_key }}</p>
+        </section>
+
+        <section>
+          <div>
+            <input
+              type="checkbox"
+              id="accept"
+              name="acceptCheckbox"
+              class="mr-1"
+            />
+            <label for="accept"
+              >I have written down my wallet name and wallet key on a piece of
+              paper and I understand that if I lose my wallet key I lose all
+              funds belonging to that wallet key</label
+            >
+          </div>
+
+          <button class="w-full bg-light-blue text-lace text-xl p-3">
+            Go to my new wallet
+          </button>
+        </section>
       </div>
     </main>
   </body>
@@ -53,10 +92,13 @@ import Wallets from "./components/Wallets.vue";
 enum View {
   Home,
   AddWallet,
+  NewWallet,
   Wallet,
 }
 
 const view = ref(View.Home);
+
+const currentWallet = ref({});
 
 const wallets = ref([
   {
@@ -72,4 +114,29 @@ const wallets = ref([
     initial_balance: 0,
   },
 ]);
+
+function createNewWallet() {
+  let wallet;
+
+  try {
+    wallet = walletCreate();
+  } catch (e) {
+    console.error(e);
+    return;
+  }
+
+  wallets.value.push(wallet);
+  currentWallet.value = wallet;
+
+  view.value = View.NewWallet;
+}
+
+function walletCreate() {
+  return {
+    wallet_key: "test-key",
+    wallet_name: "test-wallet3",
+    lightning_address: "test@asats.io",
+    initial_balance: 0,
+  };
+}
 </script>
