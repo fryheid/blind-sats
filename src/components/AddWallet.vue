@@ -1,14 +1,14 @@
 <template>
   <div
-    class="h-full flex flex-col items-center justify-center relative mx-3 mt-3"
+    class="h-full flex flex-col items-center justify-center relative mx-3 pt-3"
   >
-    <span @click="$emit('setView', View.Home)" class="absolute top-0 left-0"
-      >← back</span
+    <button @click="$emit('setView', View.Home)" type="button" class="absolute top-3 left-0"
+      >← back</button
     >
     <button
       type="button"
       @click="$emit('createNewWallet')"
-      class="w-full bg-light-blue text-lace text-xl p-3"
+      class="w-full md:w-1/2 lg:w-1/4 bg-light-blue text-lace text-xl p-3"
     >
       Create a new wallet
     </button>
