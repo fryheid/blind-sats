@@ -34,6 +34,7 @@
       <button
         class="w-full bg-light-blue text-lace text-xl p-3 disabled:opacity-50"
         :disabled="!acceptedConditions"
+        @click="$emit('setView', View.Wallet)"
       >
         Go to my new wallet
       </button>
@@ -43,7 +44,9 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import { View } from "../enum/view";
 defineProps(["currentWallet"]);
+defineEmits(["setView"]);
 
 const acceptedConditions = ref();
 </script>
