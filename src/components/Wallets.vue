@@ -10,7 +10,7 @@
         :src="`https://asats.io/anonsats/robohash/${wallet.wallet_name}`"
       />
       <div class="flex flex-col items-end">
-        <h2>{{ wallet.wallet_name }}</h2>
+        <h2 class="text-lg font-bold">{{ wallet.wallet_name }}</h2>
         <p>{{ wallet.initial_balance }} sats</p>
       </div>
     </li>

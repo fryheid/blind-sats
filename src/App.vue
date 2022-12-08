@@ -3,7 +3,7 @@
     <header class="bg-dark-blue">
       <div class="mx-3">
         <button type="button" @click="view = View.Home">
-          <h1 class="text-lace text-3xl">Blind sats</h1>
+          <h1 class="text-lace text-3xl font-extralight">Blind sats</h1>
         </button>
       </div>
     </header>
