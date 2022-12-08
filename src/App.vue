@@ -87,14 +87,8 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
+import { View } from './enum/view'
 import Wallets from "./components/Wallets.vue";
-
-enum View {
-  Home,
-  AddWallet,
-  NewWallet,
-  Wallet,
-}
 
 const view = ref(View.Home);
 
