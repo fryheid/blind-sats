@@ -1,5 +1,7 @@
 <template>
-  <body class="bg-lace h-screen text-dark-blue">
+  <body
+    class="bg-lace h-screen text-dark-blue grid grid-rows-[min-content_1fr]"
+  >
     <header class="bg-dark-blue">
       <div class="mx-3">
         <button type="button" @click="view = View.Home">
@@ -23,7 +25,18 @@
         </button>
       </template>
 
-      <p v-else-if="view === View.AddWallet">Add wallet</p>
+      <div
+        v-else-if="view === View.AddWallet"
+        class="h-full flex flex-col items-center justify-center relative mx-3 mt-3"
+      >
+        <span @click="view = View.Home" class="absolute top-0 left-0">← back</span>
+        <button type="button" class="w-full bg-light-blue text-lace p-3">
+          Create a new wallet
+        </button>
+        <button class="text-light-blue underline mt-3">
+          Or import an already existing wallet
+        </button>
+      </div>
     </main>
   </body>
 </template>
