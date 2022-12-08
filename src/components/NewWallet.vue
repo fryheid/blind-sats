@@ -14,22 +14,34 @@
     </section>
 
     <section>
-      <div>
-        <input type="checkbox" id="accept" name="acceptCheckbox" class="mr-1" />
-        <label for="accept"
+      <div class="mb-1">
+        <input
+          type="checkbox"
+          v-model="acceptedConditions"
+          id="acceptConditions"
+          name="acceptConditionsCheckbox"
+          class="mr-1"
+        />
+        <label for="acceptConditions"
           >I have written down my wallet name and wallet key on a piece of paper
           and I understand that if I lose my wallet key I lose all funds
           belonging to that wallet key</label
         >
       </div>
 
-      <button class="w-full bg-light-blue text-lace text-xl p-3">
+      <button
+        class="w-full bg-light-blue text-lace text-xl p-3 disabled:opacity-50"
+        :disabled="!acceptedConditions"
+      >
         Go to my new wallet
       </button>
     </section>
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
+import { ref } from "vue";
 defineProps(["currentWallet"]);
+
+const acceptedConditions = ref();
 </script>
