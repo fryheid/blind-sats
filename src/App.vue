@@ -16,7 +16,7 @@
 
         <button
           type="button"
-          @click="view = View.AddWallet"
+          @click="setView(View.AddWallet)"
           class="bg-orange rounded-full text-lace absolute bottom-[1vh] right-[1vh] px-3 p-3"
         >
           <img src="/plus.svg" />
@@ -27,7 +27,7 @@
         v-else-if="view === View.AddWallet"
         class="h-full flex flex-col items-center justify-center relative mx-3 mt-3"
       >
-        <span @click="view = View.Home" class="absolute top-0 left-0"
+        <span @click="setView(View.Home)" class="absolute top-0 left-0"
           >← back</span
         >
         <button
