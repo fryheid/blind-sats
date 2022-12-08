@@ -12,7 +12,11 @@
         </p>
         <Wallets v-else :wallets="wallets" />
 
-        <button type="button" @click="view = View.AddWallet" class="bg-orange rounded-full text-lace absolute bottom-[1vh] right-[1vh] px-3 p-3">
+        <button
+          type="button"
+          @click="view = View.AddWallet"
+          class="bg-orange rounded-full text-lace absolute bottom-[1vh] right-[1vh] px-3 p-3"
+        >
           <img src="/plus.svg" />
         </button>
       </template>
