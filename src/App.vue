@@ -1,6 +1,6 @@
 <template>
   <body
-    class="bg-lace h-screen text-dark-blue grid grid-rows-[min-content_1fr]"
+    class="bg-lace h-screen mh-screen text-dark-blue grid grid-rows-[min-content_1fr]"
   >
     <header class="bg-dark-blue container mx-auto max-w-screen-sm">
         <div class="mx-3">
@@ -9,7 +9,7 @@
       <div class="">
       </div>
     </header>
-    <main class="container mx-auto max-w-screen-sm shadow-2xl relative">
+    <main class="container mx-auto max-w-screen-sm shadow-2xl relative overflow-y-auto">
       <template v-if="view === View.Home">
         <Home @set-view="setView" :wallets="wallets" />
       </template>
@@ -48,6 +48,66 @@ const wallets = ref([
   {
     wallet_key: "test-key",
     wallet_name: "test-wallet",
+    lightning_address: "test@asats.io",
+    initial_balance: 0,
+  },
+  {
+    wallet_key: "test-key",
+    wallet_name: "test-wallet2",
+    lightning_address: "test@asats.io",
+    initial_balance: 0,
+  },
+  {
+    wallet_key: "test-key",
+    wallet_name: "test-wallet2",
+    lightning_address: "test@asats.io",
+    initial_balance: 0,
+  },
+  {
+    wallet_key: "test-key",
+    wallet_name: "test-wallet2",
+    lightning_address: "test@asats.io",
+    initial_balance: 0,
+  },
+  {
+    wallet_key: "test-key",
+    wallet_name: "test-wallet2",
+    lightning_address: "test@asats.io",
+    initial_balance: 0,
+  },
+  {
+    wallet_key: "test-key",
+    wallet_name: "test-wallet2",
+    lightning_address: "test@asats.io",
+    initial_balance: 0,
+  },
+  {
+    wallet_key: "test-key",
+    wallet_name: "test-wallet2",
+    lightning_address: "test@asats.io",
+    initial_balance: 0,
+  },
+  {
+    wallet_key: "test-key",
+    wallet_name: "test-wallet2",
+    lightning_address: "test@asats.io",
+    initial_balance: 0,
+  },
+  {
+    wallet_key: "test-key",
+    wallet_name: "test-wallet2",
+    lightning_address: "test@asats.io",
+    initial_balance: 0,
+  },
+  {
+    wallet_key: "test-key",
+    wallet_name: "test-wallet2",
+    lightning_address: "test@asats.io",
+    initial_balance: 0,
+  },
+  {
+    wallet_key: "test-key",
+    wallet_name: "test-wallet2",
     lightning_address: "test@asats.io",
     initial_balance: 0,
   },
