@@ -1,8 +1,14 @@
 <template>
   <div class="h-full mx-3 pt-3 relative">
-    <section>
-      <h2 class="text-3xl font-black">{{ wallet.wallet_name }}</h2>
-      <p class="text-lg">{{ wallet.initial_balance }} sats</p>
+    <section class="flex">
+      <img
+        class="rounded-full h-[60px] min-w-[60px] border-[1px] border-brown"
+        :src="`https://asats.io/anonsats/robohash/${wallet.wallet_name}`"
+      />
+      <div class="ml-2">
+        <h2 class="text-3xl font-black">{{ wallet.wallet_name }}</h2>
+        <p class="text-lg">{{ wallet.initial_balance }} sats</p>
+      </div>
     </section>
 
     <ul class="grid grid-cols-2 text-light-blue text-xl font-bold mt-5">
@@ -39,7 +45,6 @@
 
     <section v-else class="mt-2">
       <form @submit.prevent="" class="flex flex-col">
-
         <label for="lightning_address" class="font-bold"
           >Lightning address ⚡</label
         >
@@ -50,9 +55,7 @@
           class="border-[1px] border-brown rounded p-2"
         />
 
-        <label for="amount" class="font-bold mt-3"
-          >Amount (in sats)</label
-        >
+        <label for="amount" class="font-bold mt-3">Amount (in sats)</label>
         <input
           type="text"
           id="amount"
