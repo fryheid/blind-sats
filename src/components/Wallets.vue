@@ -8,7 +8,7 @@
     >
       <button type="button" class="w-full flex justify-between p-3">
         <img
-          class="rounded-full h-[60px] min-w-[60px] border-[1px] border-brown"
+          class="rounded-full h-[60px] min-w-[60px] border-2 border-light-blue"
           :src="`https://asats.io/anonsats/robohash/${wallet.wallet_name}`"
         />
         <div class="flex flex-col items-end">

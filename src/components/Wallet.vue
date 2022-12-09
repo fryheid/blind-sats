@@ -2,7 +2,7 @@
   <div class="h-full mx-3 pt-3 relative">
     <section class="flex">
       <img
-        class="rounded-full h-[60px] min-w-[60px] border-[1px] border-brown"
+        class="rounded-full h-[60px] min-w-[60px] border-2 border-light-blue"
         :src="`https://asats.io/anonsats/robohash/${wallet.wallet_name}`"
       />
       <div class="ml-2">
