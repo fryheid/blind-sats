@@ -13,11 +13,11 @@
     </div>
     <button class="absolute top-0 right-0 mt-2 mr-2" @click="close">
       <svg
-        class="stroke-dark-blue rotate-45"
+        class="rotate-45"
+        :class="[orange ? 'stroke-orange' : 'stroke-dark-blue']"
         width="16"
         height="16"
         viewBox="0 0 16 16"
-        fill="#000"
         xmlns="http://www.w3.org/2000/svg"
       >
         <line
@@ -40,6 +40,10 @@
     </button>
   </vue-final-modal>
 </template>
+
+<script setup lang="ts">
+defineProps(["orange"])
+</script>
 
 <style scoped>
 svg {
