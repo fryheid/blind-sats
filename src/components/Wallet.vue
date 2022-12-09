@@ -11,6 +11,18 @@
       </div>
     </section>
 
+    <fieldset class="border-2 border-light-blue rounded pb-3 px-1">
+      <legend><h3 class="text-light-blue text-xl font-bold px-2">Lightning ⚡</h3></legend>
+      <div class="flex justify-between mx-2">
+        <button type="button" class="btn-primary">
+          Receive
+        </button>
+        <button type="button" class="btn-primary">
+          Send
+        </button>
+      </div>
+    </fieldset>
+
     <ul class="grid grid-cols-2 text-light-blue text-xl font-bold mt-5">
       <li>
         <button
