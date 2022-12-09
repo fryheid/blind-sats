@@ -7,10 +7,7 @@
       class="border-b-[1px] border-brown"
     >
       <button type="button" class="w-full flex justify-between p-3">
-        <img
-          class="rounded-full h-[60px] min-w-[60px] border-2 border-light-blue"
-          :src="`https://asats.io/anonsats/robohash/${wallet.wallet_name}`"
-        />
+        <Avatar :wallet-name="wallet.wallet_name" />
         <div class="flex flex-col items-end">
           <h2 class="text-lg font-bold">{{ wallet.wallet_name }}</h2>
           <p>{{ wallet.initial_balance }} sats</p>
@@ -21,6 +18,8 @@
 </template>
 
 <script setup lang="ts">
+import Avatar from "./Avatar.vue";
+
 defineProps(["wallets"]);
 defineEmits(["openWallet"]);
 </script>

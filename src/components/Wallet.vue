@@ -1,10 +1,7 @@
 <template>
   <div class="h-full mx-3 pt-3 relative">
     <section class="flex">
-      <img
-        class="rounded-full h-[60px] min-w-[60px] border-2 border-light-blue"
-        :src="`https://asats.io/anonsats/robohash/${wallet.wallet_name}`"
-      />
+      <Avatar :wallet-name="wallet.wallet_name" />
       <div class="ml-2">
         <h2 class="text-3xl font-black">{{ wallet.wallet_name }}</h2>
         <p class="text-lg">{{ wallet.initial_balance }} sats</p>
@@ -102,6 +99,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { View } from "../enum/view";
+import Avatar from "./Avatar.vue";
 import TailwindModal from "./TailwindModal.vue";
 import QrcodeVue from "qrcode.vue";
 
