@@ -11,30 +11,34 @@
       </div>
     </section>
 
-    <fieldset class="border-2 border-light-blue rounded pb-3 px-1">
+    <fieldset class="border-2 border-light-blue rounded pb-3 px-1 mt-5">
       <legend>
         <h3 class="text-light-blue text-xl font-bold px-2">Lightning ⚡</h3>
       </legend>
       <div class="flex justify-between mx-2">
         <button
           type="button"
-          @click="modals.receive = true"
+          @click="modals.lightning.receive = true"
           class="btn-primary"
         >
           Receive
         </button>
-        <button type="button" @click="modals.send = true" class="btn-primary">
+        <button
+          type="button"
+          @click="modals.lightning.send = true"
+          class="btn-primary"
+        >
           Send
         </button>
       </div>
     </fieldset>
 
-    <tailwind-modal v-model="modals.receive">
+    <tailwind-modal v-model="modals.lightning.receive">
       <qrcode-vue :value="wallet.lightning_address" :size="200" level="L" />
       <p class="text-lg">{{ wallet.lightning_address }}</p>
     </tailwind-modal>
 
-    <tailwind-modal v-model="modals.send">
+    <tailwind-modal v-model="modals.lightning.send">
       <form @submit.prevent="" class="flex flex-col">
         <label for="lightning_address" class="font-bold"
           >Lightning address ⚡</label
@@ -64,6 +68,27 @@
       </form>
     </tailwind-modal>
 
+    <fieldset class="border-2 border-orange rounded pb-3 px-1 mt-5">
+      <legend>
+        <h3 class="text-orange text-xl font-bold px-2">eCash 💵</h3>
+      </legend>
+      <div class="flex justify-between mx-2">
+        <button
+          type="button"
+          @click="modals.ecash.receive = true"
+          class="btn-primary bg-orange"
+        >
+          Receive
+        </button>
+        <button
+          type="button"
+          class="btn-primary bg-orange"
+        >
+          Create
+        </button>
+      </div>
+    </fieldset>
+
     <button
       @click="$emit('setView', View.Home)"
       type="button"
@@ -84,8 +109,13 @@ defineProps(["wallet"]);
 defineEmits(["setView"]);
 
 const modals = ref({
-  receive: false,
-  send: false,
+  lightning: {
+    receive: false,
+    send: false,
+  },
+  ecash: {
+    receive: false,
+  },
 });
 
 function walletBalance(wallet_key: string) {
