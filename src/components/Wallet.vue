@@ -87,6 +87,28 @@
       </div>
     </fieldset>
 
+    <tailwind-modal v-model="modals.ecash.receive" :orange="true" >
+      <form @submit.prevent="" class="flex flex-col">
+        <label for="lightning_address" class="text-orange font-bold"
+          >eCash value</label
+        >
+        <textarea
+          type="text"
+          id="lightning_address"
+          name="Lightning address"
+          class="border-[1px] border-brown rounded p-2"
+          rows="8"
+        ></textarea>
+
+        <button
+          type="button"
+          class="btn-primary w-full bg-orange mt-5"
+        >
+          Claim
+        </button>
+      </form>
+    </tailwind-modal>
+
     <button
       @click="$emit('setView', View.Home)"
       type="button"
