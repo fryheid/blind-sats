@@ -37,6 +37,7 @@
         level="L"
         background="#fff7e9"
         foreground="#1746a2"
+        class="mt-4"
       />
       <p class="text-lg">{{ wallet.lightning_address }}</p>
     </tailwind-modal>

@@ -5,7 +5,7 @@
     classes="flex justify-center items-center"
     content-class="relative flex flex-col max-h-full mx-4 p-4 rounded bg-lace"
   >
-    <span class="mr-8 text-2xl font-bold mt-4">
+    <span class="mr-8 text-2xl font-bold">
       <slot name="title"></slot>
     </span>
     <div class="flex-grow overflow-y-auto">
