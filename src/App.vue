@@ -2,7 +2,7 @@
   <body
     class="bg-lace h-[100dvh] mh-screen text-dark-blue grid grid-rows-[min-content_1fr]"
   >
-    <header class="bg-dark-blue container mx-auto max-w-screen-sm">
+    <header class="bg-dark-blue container mx-auto max-w-screen-sm shadow-md">
       <div class="mx-3">
         <h1 class="text-lace text-3xl font-extralight">Blind sats</h1>
       </div>
