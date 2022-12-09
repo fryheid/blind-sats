@@ -12,76 +12,57 @@
     </section>
 
     <fieldset class="border-2 border-light-blue rounded pb-3 px-1">
-      <legend><h3 class="text-light-blue text-xl font-bold px-2">Lightning ⚡</h3></legend>
+      <legend>
+        <h3 class="text-light-blue text-xl font-bold px-2">Lightning ⚡</h3>
+      </legend>
       <div class="flex justify-between mx-2">
-        <button type="button" class="btn-primary">
+        <button
+          type="button"
+          @click="modals.receive = true"
+          class="btn-primary"
+        >
           Receive
         </button>
-        <button type="button" class="btn-primary">
+        <button type="button" @click="modals.send = true" class="btn-primary">
           Send
         </button>
       </div>
     </fieldset>
 
-    <ul class="grid grid-cols-2 text-light-blue text-xl font-bold mt-5">
-      <li>
-        <button
-          type="button"
-          @click="tab = Tab.Receive"
-          :class="{
-            underline: tab === Tab.Receive,
-            'opacity-50': tab !== Tab.Receive,
-          }"
-        >
-          Receive
-        </button>
-      </li>
-      <li>
-        <button
-          type="button"
-          @click="tab = Tab.Send"
-          :class="{
-            underline: tab === Tab.Send,
-            'opacity-50': tab !== Tab.Send,
-          }"
-        >
-          Send
-        </button>
-      </li>
-    </ul>
-
-    <section v-if="tab === Tab.Receive" class="mt-4">
+    <tailwind-modal v-model="modals.receive">
       <qrcode-vue :value="wallet.lightning_address" :size="200" level="L" />
       <p class="text-lg">{{ wallet.lightning_address }}</p>
-    </section>
+    </tailwind-modal>
 
-    <section v-else class="mt-2">
+    <tailwind-modal v-model="modals.send">
       <form @submit.prevent="" class="flex flex-col">
         <label for="lightning_address" class="font-bold"
           >Lightning address ⚡</label
         >
-        <input
+        <textarea
           type="text"
           id="lightning_address"
           name="Lightning address"
           class="border-[1px] border-brown rounded p-2"
-        />
+          rows="8"
+        ></textarea>
 
         <label for="amount" class="font-bold mt-3">Amount (in sats)</label>
         <input
-          type="text"
+          type="number"
           id="amount"
           name="Amount (in sats)"
           class="border-[1px] border-brown rounded p-2"
         />
+
+        <button
+          type="button"
+          class="w-full bg-light-blue text-lace text-xl rounded p-3 mt-5"
+        >
+          Send sats
+        </button>
       </form>
-      <button
-        type="button"
-        class="w-full bg-light-blue text-lace text-xl rounded p-3 mt-5"
-      >
-        Send sats
-      </button>
-    </section>
+    </tailwind-modal>
 
     <button
       @click="$emit('setView', View.Home)"
@@ -96,17 +77,16 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { View } from "../enum/view";
+import TailwindModal from "./TailwindModal.vue";
 import QrcodeVue from "qrcode.vue";
 
 defineProps(["wallet"]);
 defineEmits(["setView"]);
 
-enum Tab {
-  "Receive",
-  "Send",
-}
-
-const tab = ref(Tab.Receive);
+const modals = ref({
+  receive: false,
+  send: false,
+});
 
 function walletBalance(wallet_key: string) {
   return 0;

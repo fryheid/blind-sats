@@ -1,0 +1,48 @@
+<template>
+  <vue-final-modal
+    v-slot="{ params, close }"
+    v-bind="$attrs"
+    classes="flex justify-center items-center"
+    content-class="relative flex flex-col max-h-full mx-4 p-4 rounded bg-lace"
+  >
+    <span class="mr-8 text-2xl font-bold mt-4">
+      <slot name="title"></slot>
+    </span>
+    <div class="flex-grow overflow-y-auto">
+      <slot :params="params"></slot>
+    </div>
+    <button class="absolute top-0 right-0 mt-2 mr-2" @click="close">
+      <svg
+        class="stroke-dark-blue rotate-45"
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="#000"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="8"
+          y1="1"
+          x2="8"
+          y2="15"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+        <line
+          x1="15"
+          y1="8"
+          x2="1"
+          y2="8"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+      </svg>
+    </button>
+  </vue-final-modal>
+</template>
+
+<style scoped>
+svg {
+  height: 16px;
+}
+</style>
