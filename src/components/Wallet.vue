@@ -31,7 +31,13 @@
     </fieldset>
 
     <tailwind-modal v-model="modals.lightning.receive">
-      <qrcode-vue :value="wallet.lightning_address" :size="200" level="L" />
+      <qrcode-vue
+        :value="wallet.lightning_address"
+        :size="200"
+        level="L"
+        background="#fff7e9"
+        foreground="#1746a2"
+      />
       <p class="text-lg">{{ wallet.lightning_address }}</p>
     </tailwind-modal>
 
@@ -77,12 +83,7 @@
         >
           Receive
         </button>
-        <button
-          type="button"
-          class="btn-primary bg-orange"
-        >
-          Create
-        </button>
+        <button type="button" class="btn-primary bg-orange">Create</button>
       </div>
     </fieldset>
 
