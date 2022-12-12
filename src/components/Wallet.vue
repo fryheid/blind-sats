@@ -1,6 +1,6 @@
 <template>
   <div class="h-full mx-3 pt-3 relative">
-    <section class="flex">
+    <section class="flex md:mt-8">
       <Avatar :wallet-name="wallet.wallet_name" />
       <div class="ml-2">
         <h2 class="text-3xl font-black">{{ wallet.wallet_name }}</h2>
@@ -112,7 +112,7 @@
     <button
       @click="$emit('setView', View.Home)"
       type="button"
-      class="absolute bottom-3 left-0"
+      class="absolute bottom-3 left-0 md:top-3 md:bottom-full"
     >
       ← back
     </button>

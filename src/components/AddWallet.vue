@@ -12,9 +12,13 @@
     <button class="text-light-blue underline mt-3">
       Or import an already existing wallet
     </button>
-    <button @click="$emit('setView', View.Home)" type="button" class="absolute bottom-3 left-0"
-      >← back</button
+    <button
+      @click="$emit('setView', View.Home)"
+      type="button"
+      class="absolute bottom-3 left-0 md:top-3 md:bottom-full"
     >
+      ← back
+    </button>
   </div>
 </template>
 
