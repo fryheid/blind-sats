@@ -8,27 +8,45 @@
       </div>
     </section>
 
-    <fieldset class="border-2 border-light-blue rounded pb-3 px-1 mt-5">
-      <legend>
-        <h3 class="text-light-blue text-xl font-bold px-2">Lightning ⚡</h3>
-      </legend>
-      <div class="flex justify-between mx-2">
-        <button
-          type="button"
-          @click="modals.lightning.receive = true"
-          class="btn-primary"
-        >
-          Receive
-        </button>
-        <button
-          type="button"
-          @click="modals.lightning.send = true"
-          class="btn-primary"
-        >
-          Send
-        </button>
-      </div>
-    </fieldset>
+    <div class="columns-1 md:columns-2 w-full mt-5">
+      <fieldset class="border-2 border-light-blue rounded pb-3 px-1">
+        <legend>
+          <h3 class="text-light-blue text-xl font-bold px-2">Lightning ⚡</h3>
+        </legend>
+        <div class="flex justify-between mx-2">
+          <button
+            type="button"
+            @click="modals.lightning.receive = true"
+            class="btn-primary"
+          >
+            Receive
+          </button>
+          <button
+            type="button"
+            @click="modals.lightning.send = true"
+            class="btn-primary"
+          >
+            Send
+          </button>
+        </div>
+      </fieldset>
+
+      <fieldset class="border-2 border-orange rounded pb-3 px-1 mt-5">
+        <legend>
+          <h3 class="text-orange text-xl font-bold px-2">eCash 💵</h3>
+        </legend>
+        <div class="flex justify-between mx-2">
+          <button
+            type="button"
+            @click="modals.ecash.receive = true"
+            class="btn-primary bg-orange"
+          >
+            Receive
+          </button>
+          <button type="button" class="btn-primary bg-orange">Create</button>
+        </div>
+      </fieldset>
+    </div>
 
     <tailwind-modal v-model="modals.lightning.receive">
       <qrcode-vue
@@ -72,23 +90,7 @@
       </form>
     </tailwind-modal>
 
-    <fieldset class="border-2 border-orange rounded pb-3 px-1 mt-5">
-      <legend>
-        <h3 class="text-orange text-xl font-bold px-2">eCash 💵</h3>
-      </legend>
-      <div class="flex justify-between mx-2">
-        <button
-          type="button"
-          @click="modals.ecash.receive = true"
-          class="btn-primary bg-orange"
-        >
-          Receive
-        </button>
-        <button type="button" class="btn-primary bg-orange">Create</button>
-      </div>
-    </fieldset>
-
-    <tailwind-modal v-model="modals.ecash.receive" :orange="true" >
+    <tailwind-modal v-model="modals.ecash.receive" :orange="true">
       <form @submit.prevent="" class="flex flex-col">
         <label for="lightning_address" class="text-orange font-bold"
           >eCash value</label
@@ -101,10 +103,7 @@
           rows="8"
         ></textarea>
 
-        <button
-          type="button"
-          class="btn-primary w-full bg-orange mt-5"
-        >
+        <button type="button" class="btn-primary w-full bg-orange mt-5">
           Claim
         </button>
       </form>
