@@ -1,6 +1,6 @@
 # Blind sats
 
-An experimental front-end for anonsats.io
+An experimental front-end for anonsats.io built using Vue 3 and Vite
 
 ## How to use the code
 
