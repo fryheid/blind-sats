@@ -13,3 +13,15 @@ body {
     @apply bg-light-blue text-lace text-xl rounded p-3;
   }
 }
+
+main::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+main::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+main::-webkit-scrollbar-thumb {
+  @apply bg-dark-blue rounded-full;
+}
