@@ -5,7 +5,7 @@
     <button
       type="button"
       @click="$emit('createNewWallet')"
-      class="w-full md:w-1/2 lg:w-1/4 bg-light-blue text-lace text-xl rounded p-3"
+      class="w-full md:w-1/2 bg-light-blue text-lace text-xl rounded p-3"
     >
       Create a new wallet
     </button>
