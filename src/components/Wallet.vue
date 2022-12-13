@@ -43,7 +43,13 @@
           >
             Receive
           </button>
-          <button type="button" class="btn-primary bg-orange">Create</button>
+          <button
+            type="button"
+            @click="$emit('setView', View.eCash)"
+            class="btn-primary bg-orange"
+          >
+            Send
+          </button>
         </div>
       </fieldset>
     </div>

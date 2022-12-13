@@ -30,6 +30,10 @@
         <template v-else-if="view === View.Wallet">
           <Wallet @set-view="setView" :wallet="currentWallet" />
         </template>
+
+        <template v-else-if="view === View.eCash">
+          <eCash @set-view="setView" :wallet="currentWallet" />
+        </template>
       </main>
     </div>
   </body>
@@ -42,6 +46,7 @@ import Home from "./components/Home.vue";
 import AddWallet from "./components/AddWallet.vue";
 import NewWallet from "./components/NewWallet.vue";
 import Wallet from "./components/Wallet.vue";
+import eCash from "./components/eCash.vue";
 
 const view = ref(View.Home);
 

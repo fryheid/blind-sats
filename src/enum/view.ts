@@ -3,4 +3,5 @@ export enum View {
   AddWallet,
   NewWallet,
   Wallet,
+  eCash,
 }
