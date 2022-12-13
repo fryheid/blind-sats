@@ -1,31 +1,37 @@
 <template>
   <body
-    class="bg-lace h-[100dvh] mh-screen text-dark-blue grid grid-rows-[min-content_1fr]"
+    class="flex content-center justify-center bg-lace h-[100dvh] mh-screen text-dark-blue"
   >
-    <header class="bg-dark-blue container mx-auto max-w-screen-sm shadow-md">
-      <div class="mx-3">
-        <h1 class="text-lace text-3xl font-extralight">Blind sats</h1>
-      </div>
-    </header>
-    <main
-      class="container mx-auto max-w-screen-sm shadow-2xl relative overflow-y-auto"
+    <div
+      class="grid grid-rows-[min-content_1fr] container mx-auto my-auto max-w-screen-sm h-full sm:h-[600px] max-h-full shadow-2xl sm:rounded"
     >
-      <template v-if="view === View.Home">
-        <Home @set-view="setView" @open-wallet="openWallet" :wallets="wallets" />
-      </template>
+      <header class="bg-dark-blue shadow-md sm:rounded-t">
+        <div class="mx-3">
+          <h1 class="text-lace text-3xl font-extralight">Blind sats</h1>
+        </div>
+      </header>
+      <main class="relative overflow-y-auto">
+        <template v-if="view === View.Home">
+          <Home
+            @set-view="setView"
+            @open-wallet="openWallet"
+            :wallets="wallets"
+          />
+        </template>
 
-      <template v-else-if="view === View.AddWallet">
-        <AddWallet @set-view="setView" @create-new-wallet="createNewWallet" />
-      </template>
+        <template v-else-if="view === View.AddWallet">
+          <AddWallet @set-view="setView" @create-new-wallet="createNewWallet" />
+        </template>
 
-      <template v-else-if="view === View.NewWallet">
-        <NewWallet @set-view="setView" :current-wallet="currentWallet" />
-      </template>
+        <template v-else-if="view === View.NewWallet">
+          <NewWallet @set-view="setView" :current-wallet="currentWallet" />
+        </template>
 
-      <template v-else-if="view === View.Wallet">
-        <Wallet @set-view="setView" :wallet="currentWallet" />
-      </template>
-    </main>
+        <template v-else-if="view === View.Wallet">
+          <Wallet @set-view="setView" :wallet="currentWallet" />
+        </template>
+      </main>
+    </div>
   </body>
 </template>
 
