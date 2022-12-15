@@ -86,6 +86,7 @@
           name="Amount (in sats)"
           class="border-[1px] border-brown rounded p-2"
           required
+          min="1"
         />
 
         <button
