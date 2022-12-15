@@ -112,13 +112,20 @@
       </form>
     </tailwind-modal>
 
-    <button
-      @click="$emit('setView', View.Home)"
-      type="button"
-      class="absolute bottom-3 left-0 md:top-3 md:bottom-full"
-    >
-      ← back
-    </button>
+    <div class="absolute bottom-0 md:top-3 md:bottom-auto w-full flex justify-between mb-3">
+      <button
+        @click="$emit('setView', View.Home)"
+        type="button"
+      >
+        ← back
+      </button>
+      <button
+        @click="$emit('setView', View.Settings)"
+        type="button"
+      >
+        ⚙️ settings
+      </button>
+    </div>
   </div>
 </template>
 
