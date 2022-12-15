@@ -90,7 +90,7 @@
 
         <button
           type="button"
-          class="w-full bg-light-blue text-lace text-xl rounded p-3 mt-5"
+          class="btn-primary mt-5"
         >
           Send sats
         </button>
