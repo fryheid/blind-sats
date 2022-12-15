@@ -90,7 +90,7 @@
         />
 
         <button
-          type="button"
+          type="submit"
           class="btn-primary mt-5"
         >
           Send sats
