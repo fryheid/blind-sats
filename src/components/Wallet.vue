@@ -89,12 +89,7 @@
           min="1"
         />
 
-        <button
-          type="submit"
-          class="btn-primary mt-5"
-        >
-          Send sats
-        </button>
+        <button type="submit" class="btn-primary mt-5">Send sats</button>
       </form>
     </tailwind-modal>
 
