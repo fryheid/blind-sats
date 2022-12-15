@@ -76,6 +76,7 @@
           id="lightning_address"
           name="Lightning address"
           class="border-[1px] border-brown rounded p-2"
+          required
         />
 
         <label for="amount" class="font-bold mt-3">Amount (in sats)</label>
@@ -84,6 +85,7 @@
           id="amount"
           name="Amount (in sats)"
           class="border-[1px] border-brown rounded p-2"
+          required
         />
 
         <button
