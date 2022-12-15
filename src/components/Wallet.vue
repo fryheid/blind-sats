@@ -71,13 +71,12 @@
         <label for="lightning_address" class="font-bold"
           >Lightning address ⚡</label
         >
-        <textarea
-          type="text"
+        <input
+          type="email"
           id="lightning_address"
           name="Lightning address"
           class="border-[1px] border-brown rounded p-2"
-          rows="8"
-        ></textarea>
+        />
 
         <label for="amount" class="font-bold mt-3">Amount (in sats)</label>
         <input
