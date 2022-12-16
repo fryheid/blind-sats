@@ -3,7 +3,7 @@
     v-slot="{ params, close }"
     v-bind="$attrs"
     classes="flex justify-center items-center"
-    content-class="relative flex flex-col max-h-full mx-4 p-4 rounded bg-lace"
+    content-class="relative flex flex-col max-h-full mx-4 p-4 rounded bg-lace max-w-[600px]"
   >
     <span class="mr-8 text-2xl font-bold">
       <slot name="title"></slot>
@@ -42,7 +42,7 @@
 </template>
 
 <script setup lang="ts">
-defineProps(["orange"])
+defineProps(["orange"]);
 </script>
 
 <style scoped>
