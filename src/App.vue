@@ -23,6 +23,14 @@
           <AddWallet @set-view="setView" @create-new-wallet="createNewWallet" />
         </template>
 
+        <template v-else-if="view === View.RestoreWallet">
+          <RestoreWallet
+            @set-view="setView"
+            @restore-wallet="restoreWallet"
+            :legacy-wallet="legacyWallet"
+          />
+        </template>
+
         <template v-else-if="view === View.NewWallet">
           <NewWallet @set-view="setView" :current-wallet="currentWallet" />
         </template>
@@ -48,6 +56,7 @@ import { ref, onMounted } from "vue";
 import { View } from "./enum/view";
 import Home from "./components/Home.vue";
 import AddWallet from "./components/AddWallet.vue";
+import RestoreWallet from "./components/RestoreWallet.vue";
 import NewWallet from "./components/NewWallet.vue";
 import Wallet from "./components/Wallet.vue";
 import eCash from "./components/eCash.vue";
@@ -60,6 +69,7 @@ function setView(newView: View) {
 }
 
 const currentWallet = ref({});
+const legacyWallet = ref(false);
 
 const wallets = ref([
   {
