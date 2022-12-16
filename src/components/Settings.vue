@@ -50,7 +50,7 @@
         </button>
         <button
           type="button"
-          @click="modals.forget = true"
+          @click="modals.forget = false"
           class="btn-outline border-slate-400 text-slate-400"
         >
           No, cancel
