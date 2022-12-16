@@ -27,7 +27,7 @@
         />
       </template>
 
-      <button type="submit" class="btn-primary mt-3">Restore</button>
+      <button type="submit" class="btn mt-3">Restore</button>
     </form>
 
     <button

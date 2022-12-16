@@ -11,14 +11,14 @@
           <button
             type="button"
             @click="modals.backup = true"
-            class="btn-primary bg-slate-400"
+            class="btn bg-slate-400"
           >
             Backup
           </button>
           <button
             type="button"
             @click="modals.forget = true"
-            class="btn-primary bg-slate-400"
+            class="btn bg-slate-400"
           >
             Forget
           </button>
@@ -44,14 +44,14 @@
         <button
           type="button"
           @click="modals.forget = true"
-          class="btn-primary bg-slate-400 mr-3"
+          class="btn bg-slate-400 mr-3"
         >
           Yes, forget
         </button>
         <button
           type="button"
           @click="modals.forget = true"
-          class="btn-primary bg-slate-400"
+          class="btn bg-slate-400"
         >
           No, cancel
         </button>

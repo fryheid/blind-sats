@@ -17,14 +17,14 @@
           <button
             type="button"
             @click="modals.lightning.receive = true"
-            class="btn-primary"
+            class="btn"
           >
             Receive
           </button>
           <button
             type="button"
             @click="modals.lightning.send = true"
-            class="btn-primary"
+            class="btn"
           >
             Send
           </button>
@@ -39,14 +39,14 @@
           <button
             type="button"
             @click="modals.ecash.receive = true"
-            class="btn-primary bg-orange"
+            class="btn bg-orange"
           >
             Receive
           </button>
           <button
             type="button"
             @click="$emit('setView', View.eCash)"
-            class="btn-primary bg-orange"
+            class="btn bg-orange"
           >
             Send
           </button>
@@ -89,7 +89,7 @@
           min="1"
         />
 
-        <button type="submit" class="btn-primary mt-5">Send sats</button>
+        <button type="submit" class="btn mt-5">Send sats</button>
       </form>
     </tailwind-modal>
 
@@ -106,7 +106,7 @@
           rows="8"
         ></textarea>
 
-        <button type="button" class="btn-primary w-full bg-orange mt-5">
+        <button type="button" class="btn w-full bg-orange mt-5">
           Claim
         </button>
       </form>

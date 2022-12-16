@@ -32,7 +32,7 @@
       </div>
 
       <button
-        class="btn-primary w-full disabled:opacity-50"
+        class="btn w-full disabled:opacity-50"
         :disabled="!acceptedConditions"
         @click="$emit('setView', View.Wallet)"
       >

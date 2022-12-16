@@ -9,7 +9,7 @@ body {
 }
 
 @layer components {
-  .btn-primary {
+  .btn {
     @apply bg-light-blue text-lace text-xl rounded p-3 hover:brightness-95 active:brightness-90;
   }
 }

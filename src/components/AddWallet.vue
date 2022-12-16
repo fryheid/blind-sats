@@ -5,7 +5,7 @@
     <button
       type="button"
       @click="$emit('createNewWallet')"
-      class="btn-primary w-full md:w-1/2"
+      class="btn w-full md:w-1/2"
     >
       Create a new wallet
     </button>
@@ -16,7 +16,7 @@
     >
       Or import an already existing wallet
     </button>
-    
+
     <button
       @click="$emit('setView', View.Home)"
       type="button"
