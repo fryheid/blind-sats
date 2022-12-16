@@ -4,4 +4,5 @@ export enum View {
   NewWallet,
   Wallet,
   eCash,
+  Settings,
 }
