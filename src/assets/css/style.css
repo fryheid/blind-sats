@@ -12,6 +12,9 @@ body {
   .btn {
     @apply bg-light-blue text-lace text-xl rounded p-3 hover:brightness-95 active:brightness-90;
   }
+  .btn-outline {
+    @apply bg-lace border-2 border-light-blue text-light-blue text-xl rounded p-3 hover:brightness-95 active:brightness-90;
+  }
 }
 
 main::-webkit-scrollbar {
