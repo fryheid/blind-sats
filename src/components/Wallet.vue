@@ -31,7 +31,7 @@
         </div>
       </fieldset>
 
-      <fieldset class="border-2 border-orange rounded pb-3 px-1 mt-5">
+      <!-- <fieldset class="border-2 border-orange rounded pb-3 px-1 mt-5">
         <legend>
           <h3 class="text-orange text-xl font-bold px-2">eCash 💵</h3>
         </legend>
@@ -51,7 +51,7 @@
             Send
           </button>
         </div>
-      </fieldset>
+      </fieldset> -->
     </div>
 
     <tailwind-modal v-model="modals.lightning.receive">
@@ -93,7 +93,7 @@
       </form>
     </tailwind-modal>
 
-    <tailwind-modal v-model="modals.ecash.receive" :orange="true">
+    <!-- <tailwind-modal v-model="modals.ecash.receive" :orange="true">
       <form @submit.prevent="" class="flex flex-col">
         <label for="lightning_address" class="text-orange font-bold"
           >eCash value</label
@@ -110,7 +110,7 @@
           Claim
         </button>
       </form>
-    </tailwind-modal>
+    </tailwind-modal> -->
 
     <div class="absolute bottom-0 md:top-3 md:bottom-auto w-full flex justify-between mb-3">
       <button
