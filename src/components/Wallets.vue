@@ -1,5 +1,5 @@
 <template>
-  <ul class="list-unstyled">
+  <ul class="list-unstyled mb-12">
     <li
       v-for="wallet in wallets"
       :key="wallet.wallet_name"
