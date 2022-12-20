@@ -1,7 +1,10 @@
 <template>
   <div class="h-full mx-3 pt-3 md:pt-11 relative">
-    <form @submit.prevent="$emit('restoreWallet', walletKey, walletName)" class="flex flex-col">
-      <label for="walletKey" class="font-bold"> Wallet_key </label>
+    <form
+      @submit.prevent="$emit('restoreWallet', walletKey, walletName)"
+      class="flex flex-col"
+    >
+      <label for="walletKey" class="font-bold">Private key</label>
       <input
         type="text"
         id="walletKey"
@@ -13,10 +16,10 @@
 
       <template v-if="legacyWallet">
         <p class="mt-3">
-          You are using a legacy wallet, please also fill in your wallet_name to
+          You are using a legacy wallet, please also fill in your wallet name to
           restore your funds
         </p>
-        <label for="walletName" class="font-bold"> Wallet_name </label>
+        <label for="walletName" class="font-bold">Wallet name</label>
         <input
           type="text"
           id="walletName"

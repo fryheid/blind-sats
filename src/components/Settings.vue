@@ -28,17 +28,17 @@
 
     <tailwind-modal v-model="modals.backup">
       <p>
-        Write down your wallet_key on a piece of paper (not online) and store it
-        safely. This wallet_key is used to access your funds.
+        Write down your private key on a piece of paper (not online) and store
+        it safely. This private key is used to access your funds.
       </p>
-      <p class="font-bold mt-3">Wallet key</p>
+      <p class="font-bold mt-3">Private key</p>
       <p>{{ wallet.wallet_key }}</p>
     </tailwind-modal>
 
     <tailwind-modal v-model="modals.forget">
       <p>
-        Are you sure you want to remove your account information (wallet_name &
-        wallet_key) from this device?
+        Are you sure you want to remove your account information (wallet name &
+        private key) from this device?
       </p>
       <div class="flex mt-3 justify-end">
         <button
