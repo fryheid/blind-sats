@@ -10,7 +10,7 @@
         <Avatar :wallet-name="wallet.wallet_name" />
         <div class="flex flex-col items-end">
           <h2 class="text-lg font-bold">{{ wallet.wallet_name }}</h2>
-          <p>{{ wallet.initial_balance }} sats</p>
+          <p>{{ wallet.balance }} sats</p>
         </div>
       </button>
     </li>
