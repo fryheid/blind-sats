@@ -146,29 +146,81 @@ const wallets = ref([
   },
 ]);
 
-function createNewWallet() {
-  let wallet;
+async function restoreWallet(wallet_key: string, wallet_name: string) {
+  const response = await getWalletInfo(wallet_key);
 
-  try {
-    wallet = walletCreate();
-  } catch (e) {
-    console.error(e);
+  if (wallet_name) {
+    const wallet = {
+      wallet_key,
+      wallet_name,
+      lightning_address: `${wallet_name}@asats.io`,
+      balance: response.available_balance,
+    };
+
+    wallets.value.push(wallet);
+    currentWallet.value = wallet;
+
+    view.value = View.Wallet;
+    legacyWallet.value = false;
     return;
   }
+
+  if (response.wallet_name === "not assigned") {
+    legacyWallet.value = true;
+    return;
+  }
+
+  const wallet = {
+    wallet_key,
+    wallet_name: response.wallet_name,
+    lightning_address: response.lightning_address,
+    balance: response.available_balance,
+  };
 
   wallets.value.push(wallet);
   currentWallet.value = wallet;
 
-  view.value = View.NewWallet;
+  view.value = View.Wallet;
 }
 
-function walletCreate() {
-  return {
-    wallet_key: "test-key",
-    wallet_name: "test-wallet3",
-    lightning_address: "test@asats.io",
-    initial_balance: 0,
+async function getWalletInfo(wallet_key: string) {
+  const response = await fetch("https://asats.io/anonsats/wallet/balance", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ wallet_key }),
+  }).then((response) => response.json());
+
+  return response;
+}
+
+async function createNewWallet() {
+  try {
+    const wallet = await walletCreate();
+    wallets.value.push(wallet);
+    currentWallet.value = wallet;
+
+    view.value = View.NewWallet;
+  } catch (e) {
+    console.error(e);
+    return;
+  }
+}
+
+async function walletCreate() {
+  const response = await fetch("https://asats.io/anonsats/wallet/create", {
+    method: "POST",
+  }).then((response) => response.json());
+
+  const wallet = {
+    wallet_key: response.wallet_key,
+    wallet_name: response.wallet_name,
+    lightning_address: response.lightning_address,
+    balance: response.initial_balance,
   };
+
+  return wallet;
 }
 
 function openWallet(wallet: Object) {
