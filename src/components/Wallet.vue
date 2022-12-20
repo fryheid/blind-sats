@@ -4,7 +4,7 @@
       <Avatar :wallet-name="wallet.wallet_name" />
       <div class="ml-2">
         <h2 class="text-3xl font-black">{{ wallet.wallet_name }}</h2>
-        <p class="text-lg">{{ wallet.initial_balance }} sats</p>
+        <p class="text-lg">{{ wallet.balance }} sats</p>
       </div>
     </section>
 
@@ -148,8 +148,4 @@ const modals = ref({
     receive: false,
   },
 });
-
-function walletBalance(wallet_key: string) {
-  return 0;
-}
 </script>
