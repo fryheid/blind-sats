@@ -69,7 +69,12 @@ function setView(newView: View) {
   view.value = newView;
 }
 
-const currentWallet = ref({});
+const currentWallet: Ref<WalletInterface> = ref({
+  wallet_key: "",
+  wallet_name: "",
+  lightning_address: "",
+  balance: 0,
+});
 const legacyWallet = ref(false);
 
 const wallets: Ref<Array<WalletInterface>> = ref([
@@ -214,7 +219,7 @@ async function walletCreate() {
     method: "POST",
   }).then((response) => response.json());
 
-  const wallet = {
+  const wallet: WalletInterface = {
     wallet_key: response.wallet_key,
     wallet_name: response.wallet_name,
     lightning_address: response.lightning_address,
@@ -224,7 +229,7 @@ async function walletCreate() {
   return wallet;
 }
 
-function openWallet(wallet: Object) {
+function openWallet(wallet: WalletInterface) {
   currentWallet.value = wallet;
   view.value = View.Wallet;
 }
