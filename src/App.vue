@@ -4,7 +4,7 @@
       class="flex content-center justify-center bg-lace dark:bg-rich-black h-[100dvh] mh-screen text-dark-blue"
     >
       <div
-        class="grid grid-rows-[min-content_1fr] container mx-auto my-auto max-w-screen-sm h-full sm:h-[600px] max-h-full shadow-2xl sm:rounded relative"
+        class="grid grid-rows-[min-content_1fr] container mx-auto my-auto max-w-screen-sm h-full sm:h-[600px] max-h-full shadow-xl shadow-brown/25 sm:rounded relative"
       >
         <header
           class="bg-dark-blue shadow-md sm:rounded-t flex justify-between"
