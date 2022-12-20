@@ -12,10 +12,7 @@
       </header>
       <main class="relative overflow-y-auto">
         <template v-if="view === View.Home">
-          <Home
-            @open-wallet="openWallet"
-            :wallets="wallets"
-          />
+          <Home @open-wallet="openWallet" :wallets="wallets" />
         </template>
 
         <template v-else-if="view === View.AddWallet">
