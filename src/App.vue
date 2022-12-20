@@ -3,7 +3,7 @@
     class="flex content-center justify-center bg-lace h-[100dvh] mh-screen text-dark-blue"
   >
     <div
-      class="grid grid-rows-[min-content_1fr] container mx-auto my-auto max-w-screen-sm h-full sm:h-[600px] max-h-full shadow-2xl sm:rounded"
+      class="grid grid-rows-[min-content_1fr] container mx-auto my-auto max-w-screen-sm h-full sm:h-[600px] max-h-full shadow-2xl sm:rounded relative"
     >
       <header class="bg-dark-blue shadow-md sm:rounded-t">
         <div class="mx-3">
@@ -13,7 +13,6 @@
       <main class="relative overflow-y-auto">
         <template v-if="view === View.Home">
           <Home
-            @set-view="setView"
             @open-wallet="openWallet"
             :wallets="wallets"
           />
@@ -44,9 +43,22 @@
         </template>
 
         <template v-else-if="view === View.Settings">
-          <Settings @set-view="setView" @forget-wallet="forgetWallet" :wallet="currentWallet" />
+          <Settings
+            @set-view="setView"
+            @forget-wallet="forgetWallet"
+            :wallet="currentWallet"
+          />
         </template>
       </main>
+
+      <button
+        v-if="view === View.Home"
+        type="button"
+        @click="setView(View.AddWallet)"
+        class="bg-orange rounded-full text-lace absolute bottom-3 right-3 p-5 hover:brightness-95 active:brightness-90"
+      >
+        <img src="/plus.svg" />
+      </button>
     </div>
   </body>
 </template>
