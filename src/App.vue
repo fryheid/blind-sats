@@ -202,6 +202,20 @@ async function getWalletInfo(wallet_key: string): Promise<WalletInfo> {
 }
 
 async function createNewWallet() {
+  const wallet: WalletInterface = {
+    wallet_name: "test-wallet3",
+    wallet_key: "test-key",
+    lightning_address: "test@asats.io",
+    balance: 0,
+  };
+
+  wallets.value.push(wallet);
+  currentWallet.value = wallet;
+
+  view.value = View.NewWallet;
+
+  return;
+
   try {
     const wallet = await walletCreate();
     wallets.value.push(wallet);
