@@ -52,7 +52,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, Ref, onMounted } from "vue";
+import { Wallet as WalletInterface, WalletInfo } from "./types";
 import { View } from "./enum/view";
 import Home from "./components/Home.vue";
 import AddWallet from "./components/AddWallet.vue";
@@ -71,7 +72,7 @@ function setView(newView: View) {
 const currentWallet = ref({});
 const legacyWallet = ref(false);
 
-const wallets = ref([
+const wallets: Ref<Array<WalletInterface>> = ref([
   {
     wallet_key: "test-key",
     wallet_name: "test-wallet",
@@ -147,14 +148,14 @@ const wallets = ref([
 ]);
 
 async function restoreWallet(wallet_key: string, wallet_name: string) {
-  const response = await getWalletInfo(wallet_key);
+  const walletInfo = await getWalletInfo(wallet_key);
 
   if (wallet_name) {
-    const wallet = {
+    const wallet: WalletInterface = {
       wallet_key,
       wallet_name,
       lightning_address: `${wallet_name}@asats.io`,
-      balance: response.available_balance,
+      balance: walletInfo.available_balance,
     };
 
     wallets.value.push(wallet);
@@ -165,16 +166,16 @@ async function restoreWallet(wallet_key: string, wallet_name: string) {
     return;
   }
 
-  if (response.wallet_name === "not assigned") {
+  if (walletInfo.wallet_name === "not assigned") {
     legacyWallet.value = true;
     return;
   }
 
-  const wallet = {
+  const wallet: WalletInterface = {
     wallet_key,
-    wallet_name: response.wallet_name,
-    lightning_address: response.lightning_address,
-    balance: response.available_balance,
+    wallet_name: walletInfo.wallet_name,
+    lightning_address: walletInfo.lightning_address,
+    balance: walletInfo.available_balance,
   };
 
   wallets.value.push(wallet);
@@ -183,16 +184,16 @@ async function restoreWallet(wallet_key: string, wallet_name: string) {
   view.value = View.Wallet;
 }
 
-async function getWalletInfo(wallet_key: string) {
-  const response = await fetch("https://asats.io/anonsats/wallet/balance", {
+async function getWalletInfo(wallet_key: string): Promise<WalletInfo> {
+  const walletInfo = await fetch("https://asats.io/anonsats/wallet/balance", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ wallet_key }),
-  }).then((response) => response.json());
+  }).then((walletInfo) => walletInfo.json());
 
-  return response;
+  return walletInfo;
 }
 
 async function createNewWallet() {
