@@ -44,7 +44,7 @@
         </template>
 
         <template v-else-if="view === View.Settings">
-          <Settings @set-view="setView" :wallet="currentWallet" />
+          <Settings @set-view="setView" @forget-wallet="forgetWallet" :wallet="currentWallet" />
         </template>
       </main>
     </div>
@@ -85,67 +85,67 @@ const wallets: Ref<Array<WalletInterface>> = ref([
     balance: 0,
   },
   {
-    wallet_key: "test-key",
+    wallet_key: "test-key2",
     wallet_name: "test-wallet2",
     lightning_address: "test@asats.io",
     balance: 0,
   },
   {
-    wallet_key: "test-key",
+    wallet_key: "test-key2",
     wallet_name: "test-wallet2",
     lightning_address: "test@asats.io",
     balance: 0,
   },
   {
-    wallet_key: "test-key",
+    wallet_key: "test-key2",
     wallet_name: "test-wallet2",
     lightning_address: "test@asats.io",
     balance: 0,
   },
   {
-    wallet_key: "test-key",
+    wallet_key: "test-key2",
     wallet_name: "test-wallet2",
     lightning_address: "test@asats.io",
     balance: 0,
   },
   {
-    wallet_key: "test-key",
+    wallet_key: "test-key2",
     wallet_name: "test-wallet2",
     lightning_address: "test@asats.io",
     balance: 0,
   },
   {
-    wallet_key: "test-key",
+    wallet_key: "test-key2",
     wallet_name: "test-wallet2",
     lightning_address: "test@asats.io",
     balance: 0,
   },
   {
-    wallet_key: "test-key",
+    wallet_key: "test-key2",
     wallet_name: "test-wallet2",
     lightning_address: "test@asats.io",
     balance: 0,
   },
   {
-    wallet_key: "test-key",
+    wallet_key: "test-key2",
     wallet_name: "test-wallet2",
     lightning_address: "test@asats.io",
     balance: 0,
   },
   {
-    wallet_key: "test-key",
+    wallet_key: "test-key2",
     wallet_name: "test-wallet2",
     lightning_address: "test@asats.io",
     balance: 0,
   },
   {
-    wallet_key: "test-key",
+    wallet_key: "test-key2",
     wallet_name: "test-wallet2",
     lightning_address: "test@asats.io",
     balance: 0,
   },
   {
-    wallet_key: "test-key",
+    wallet_key: "test-key2",
     wallet_name: "test-wallet2",
     lightning_address: "test@asats.io",
     balance: 0,
@@ -204,7 +204,7 @@ async function getWalletInfo(wallet_key: string): Promise<WalletInfo> {
 async function createNewWallet() {
   const wallet: WalletInterface = {
     wallet_name: "test-wallet3",
-    wallet_key: "test-key",
+    wallet_key: "test-key3",
     lightning_address: "test@asats.io",
     balance: 0,
   };
@@ -246,5 +246,13 @@ async function walletCreate() {
 function openWallet(wallet: WalletInterface) {
   currentWallet.value = wallet;
   view.value = View.Wallet;
+}
+
+function forgetWallet(wallet_key: string) {
+  wallets.value = wallets.value.filter(
+    (wallet) => wallet.wallet_key !== wallet_key
+  );
+
+  view.value = View.Home;
 }
 </script>

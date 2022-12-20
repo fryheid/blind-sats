@@ -43,7 +43,7 @@
       <div class="flex mt-3 justify-end">
         <button
           type="button"
-          @click="modals.forget = true"
+          @click="$emit('forgetWallet', wallet.wallet_key)"
           class="btn bg-slate-400 mr-3"
         >
           Yes, forget
@@ -74,7 +74,7 @@ import { View } from "../enum/view";
 import TailwindModal from "./TailwindModal.vue";
 
 defineProps(["wallet"]);
-defineEmits(["setView"]);
+defineEmits(["setView", "forgetWallet"]);
 
 const modals = ref({
   backup: false,
