@@ -1,63 +1,86 @@
 <template>
-  <body
-    class="flex content-center justify-center bg-lace h-[100dvh] mh-screen text-dark-blue"
-  >
-    <div
-      class="grid grid-rows-[min-content_1fr] container mx-auto my-auto max-w-screen-sm h-full sm:h-[600px] max-h-full shadow-2xl sm:rounded relative"
+  <div :class="{ dark: darkMode }">
+    <body
+      class="flex content-center justify-center bg-lace dark:bg-rich-black h-[100dvh] mh-screen text-dark-blue"
     >
-      <header class="bg-dark-blue shadow-md sm:rounded-t">
-        <div class="mx-3">
-          <h1 class="text-lace text-3xl font-extralight">Blind sats</h1>
-        </div>
-      </header>
-      <main class="relative overflow-y-auto">
-        <template v-if="view === View.Home">
-          <Home @open-wallet="openWallet" :wallets="wallets" />
-        </template>
-
-        <template v-else-if="view === View.AddWallet">
-          <AddWallet @set-view="setView" @create-new-wallet="createNewWallet" />
-        </template>
-
-        <template v-else-if="view === View.RestoreWallet">
-          <RestoreWallet
-            @set-view="setView"
-            @restore-wallet="restoreWallet"
-            :legacy-wallet="legacyWallet"
-          />
-        </template>
-
-        <template v-else-if="view === View.NewWallet">
-          <NewWallet @set-view="setView" :current-wallet="currentWallet" />
-        </template>
-
-        <template v-else-if="view === View.Wallet">
-          <Wallet @set-view="setView" :wallet="currentWallet" />
-        </template>
-
-        <template v-else-if="view === View.eCash">
-          <eCash @set-view="setView" :wallet="currentWallet" />
-        </template>
-
-        <template v-else-if="view === View.Settings">
-          <Settings
-            @set-view="setView"
-            @forget-wallet="forgetWallet"
-            :wallet="currentWallet"
-          />
-        </template>
-      </main>
-
-      <button
-        v-if="view === View.Home"
-        type="button"
-        @click="setView(View.AddWallet)"
-        class="bg-orange rounded-full text-lace absolute bottom-3 right-3 p-5 hover:brightness-95 active:brightness-90"
+      <div
+        class="grid grid-rows-[min-content_1fr] container mx-auto my-auto max-w-screen-sm h-full sm:h-[600px] max-h-full shadow-2xl sm:rounded relative"
       >
-        <img src="/plus.svg" />
-      </button>
-    </div>
-  </body>
+        <header
+          class="bg-dark-blue shadow-md sm:rounded-t flex justify-between"
+        >
+          <div class="mx-3">
+            <h1 class="text-lace text-3xl font-extralight">Blind sats</h1>
+          </div>
+          <button
+            v-if="darkMode"
+            type="button"
+            @click="darkMode = false"
+            class="w-9 mx-3"
+          >
+            ☀️
+          </button>
+          <button
+            v-else
+            type="button"
+            @click="darkMode = true"
+            class="w-9 mx-3"
+          >
+            🌙
+          </button>
+        </header>
+        <main class="relative overflow-y-auto">
+          <template v-if="view === View.Home">
+            <Home @open-wallet="openWallet" :wallets="wallets" />
+          </template>
+
+          <template v-else-if="view === View.AddWallet">
+            <AddWallet
+              @set-view="setView"
+              @create-new-wallet="createNewWallet"
+            />
+          </template>
+
+          <template v-else-if="view === View.RestoreWallet">
+            <RestoreWallet
+              @set-view="setView"
+              @restore-wallet="restoreWallet"
+              :legacy-wallet="legacyWallet"
+            />
+          </template>
+
+          <template v-else-if="view === View.NewWallet">
+            <NewWallet @set-view="setView" :current-wallet="currentWallet" />
+          </template>
+
+          <template v-else-if="view === View.Wallet">
+            <Wallet @set-view="setView" :wallet="currentWallet" />
+          </template>
+
+          <template v-else-if="view === View.eCash">
+            <eCash @set-view="setView" :wallet="currentWallet" />
+          </template>
+
+          <template v-else-if="view === View.Settings">
+            <Settings
+              @set-view="setView"
+              @forget-wallet="forgetWallet"
+              :wallet="currentWallet"
+            />
+          </template>
+        </main>
+
+        <button
+          v-if="view === View.Home"
+          type="button"
+          @click="setView(View.AddWallet)"
+          class="bg-orange rounded-full text-lace absolute bottom-3 right-3 p-5 hover:brightness-95 active:brightness-90"
+        >
+          <img src="/plus.svg" />
+        </button>
+      </div>
+    </body>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -73,6 +96,7 @@ import eCash from "./components/eCash.vue";
 import Settings from "./components/Settings.vue";
 
 const view = ref(View.Home);
+const darkMode = ref(true);
 
 function setView(newView: View) {
   view.value = newView;
