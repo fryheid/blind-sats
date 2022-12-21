@@ -1,14 +1,14 @@
 <template>
   <div class="h-full flex flex-col justify-between mx-3 py-3">
     <section>
-      <p>
+      <p class="opacity-80">
         This is your new wallet! Write down your wallet name and private key on a
         piece of paper (don't store it digitally)
       </p>
 
       <div class="text-xl">
-        <p class="font-bold mt-3">Wallet name</p>
-        <p>{{ currentWallet.wallet_name }}</p>
+        <p class="font-bold mt-3 opacity-80">Wallet name</p>
+        <p class="opacity-80">{{ currentWallet.wallet_name }}</p>
 
         <p class="font-bold mt-3">Private key</p>
         <p>{{ currentWallet.wallet_key }}</p>
@@ -16,7 +16,7 @@
     </section>
 
     <section>
-      <div class="mb-1">
+      <div class="mb-1 opacity-80">
         <input
           type="checkbox"
           v-model="acceptedConditions"

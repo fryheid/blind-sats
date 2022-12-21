@@ -11,13 +11,13 @@
         >
           <div class="shadow-[inset_0_2px_0] sm:shadow-lace/50 dark:shadow-lace/25 flex justify-between sm:rounded-t">
             <div class="mx-3">
-              <h1 class="text-lace text-3xl font-extralight">Blind sats</h1>
+              <h1 class="text-lace/80 text-2xl font-extralight">Blind sats</h1>
             </div>
             <button
               v-if="darkMode"
               type="button"
               @click="darkMode = false"
-              class="w-9 mx-3"
+              class="w-8 mx-3"
             >
               ☀️
             </button>
@@ -25,7 +25,7 @@
               v-else
               type="button"
               @click="darkMode = true"
-              class="w-9 mx-3"
+              class="w-8 mx-3"
             >
               🌙
             </button>
