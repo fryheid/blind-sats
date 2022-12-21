@@ -2,8 +2,8 @@
   <div class="h-full flex flex-col justify-between mx-3 py-3">
     <section>
       <p class="opacity-80">
-        This is your new wallet! Write down your wallet name and private key on a
-        piece of paper (don't store it digitally)
+        This is your new wallet! Write down your private key on a piece of paper
+        (don't store it digitally)
       </p>
 
       <div class="text-xl">
@@ -25,9 +25,9 @@
           class="mr-1"
         />
         <label for="acceptConditions"
-          >I have written down my wallet name and private key on a piece of paper
-          and I understand that if I lose my private key I lose all funds
-          belonging to that private key</label
+          >I have written down my private key on a piece of paper and I
+          understand that if I lose my private key I lose all funds belonging to
+          that private key</label
         >
       </div>
 
