@@ -31,7 +31,7 @@
             </button>
           </div>
         </header>
-        <main class="relative overflow-y-auto dark:bg-oxford-700">
+        <main class="relative overflow-y-auto dark:bg-oxford-700 sm:rounded-b">
           <template v-if="view === View.Home">
             <Home @open-wallet="openWallet" :wallets="wallets" />
           </template>
@@ -102,7 +102,7 @@ import eCash from "./components/eCash.vue";
 import Settings from "./components/Settings.vue";
 
 const view = ref(View.Home);
-const darkMode = ref(true);
+const darkMode = ref(false);
 
 function setView(newView: View) {
   view.value = newView;
