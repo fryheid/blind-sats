@@ -3,7 +3,7 @@
     v-slot="{ params, close }"
     v-bind="$attrs"
     classes="flex justify-center items-center"
-    content-class="relative flex flex-col max-h-full mx-4 p-4 rounded bg-lace max-w-[600px]"
+    content-class="relative flex flex-col max-h-full mx-4 p-4 rounded bg-lace dark:bg-oxford-600 max-w-[600px]"
   >
     <span class="mr-8 text-2xl font-bold">
       <slot name="title"></slot>
@@ -13,7 +13,7 @@
     </div>
     <button class="absolute top-0 right-0 mt-2 mr-2" @click="close">
       <svg
-        class="rotate-45"
+        class="rotate-45 dark:stroke-lace"
         :class="[orange ? 'stroke-orange' : 'stroke-dark-blue']"
         width="16"
         height="16"

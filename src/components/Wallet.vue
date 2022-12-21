@@ -9,9 +9,9 @@
     </section>
 
     <div class="columns-1 md:columns-2 w-full mt-5">
-      <fieldset class="border-2 border-light-blue rounded pb-3 px-1">
+      <fieldset class="border-2 border-light-blue dark:border-boy-blue rounded pb-3 px-1">
         <legend>
-          <h3 class="text-light-blue text-xl font-bold px-2">Lightning ⚡</h3>
+          <h3 class="text-light-blue dark:text-boy-blue text-xl font-bold px-2">Lightning ⚡</h3>
         </legend>
         <div class="flex justify-between mx-2">
           <button
@@ -60,8 +60,8 @@
         :size="200"
         level="L"
         background="#fff7e9"
-        foreground="#1746a2"
-        class="mt-4"
+        :foreground="[darkMode ? '#0F2743' : '#1746a2']"
+        class="mt-4 dark:border-8 dark:border-lace dark:rounded"
       />
       <p class="text-lg">{{ wallet.lightning_address }}</p>
     </tailwind-modal>
@@ -75,7 +75,7 @@
           type="email"
           id="lightning_address"
           name="Lightning address"
-          class="border-[1px] border-brown rounded p-2"
+          class="border-[1px] border-brown dark:border-lace dark:bg-oxford-600 rounded p-2 focus-visible:-outline-offset-1 focus-visible:outline-orange dark:focus-visible:outline-harvest-gold"
           required
         />
 
@@ -84,7 +84,7 @@
           type="number"
           id="amount"
           name="Amount (in sats)"
-          class="border-[1px] border-brown rounded p-2"
+          class="border-[1px] border-brown dark:border-lace dark:bg-oxford-600 rounded p-2 focus-visible:-outline-offset-1 focus-visible:outline-orange dark:focus-visible:outline-harvest-gold"
           required
           min="1"
         />
@@ -136,7 +136,7 @@ import Avatar from "./Avatar.vue";
 import TailwindModal from "./TailwindModal.vue";
 import QrcodeVue from "qrcode.vue";
 
-defineProps(["wallet"]);
+defineProps(["wallet", "darkMode"]);
 defineEmits(["setView"]);
 
 const modals = ref({

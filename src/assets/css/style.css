@@ -10,10 +10,10 @@ body {
 
 @layer components {
   .btn {
-    @apply bg-light-blue text-lace text-xl rounded p-3 hover:brightness-95 active:brightness-90;
+    @apply bg-light-blue dark:bg-boy-blue text-lace text-xl rounded p-3 hover:brightness-95 active:brightness-90;
   }
   .btn-outline {
-    @apply bg-lace border-2 border-light-blue text-light-blue text-xl rounded p-3 hover:brightness-95 active:brightness-90;
+    @apply bg-lace dark:bg-oxford-600 border-2 border-light-blue text-light-blue text-xl rounded p-3 hover:brightness-95 active:brightness-90;
   }
 }
 
@@ -26,5 +26,5 @@ main::-webkit-scrollbar-track {
 }
 
 main::-webkit-scrollbar-thumb {
-  @apply bg-dark-blue rounded-full;
+  @apply bg-dark-blue dark:bg-oxford-900 rounded-full;
 }

@@ -1,35 +1,37 @@
 <template>
   <div :class="{ dark: darkMode }">
     <body
-      class="flex content-center justify-center bg-lace dark:bg-rich-black h-[100dvh] mh-screen text-dark-blue"
+      class="flex content-center justify-center bg-lace dark:bg-oxford-800 h-[100dvh] mh-screen text-dark-blue dark:text-lace"
     >
       <div
-        class="grid grid-rows-[min-content_1fr] container mx-auto my-auto max-w-screen-sm h-full sm:h-[600px] max-h-full shadow-xl shadow-brown/25 sm:rounded relative"
+        class="grid grid-rows-[min-content_1fr] container mx-auto my-auto max-w-screen-sm h-full sm:h-[600px] max-h-full shadow-xl shadow-brown/25 dark:shadow-oxford-900/75 sm:rounded relative"
       >
         <header
-          class="bg-dark-blue shadow-md sm:rounded-t flex justify-between"
+          class="bg-dark-blue dark:bg-oxford-900 sm:rounded-t shadow-md shadow-brown/25 dark:shadow-oxford-900/25 z-20"
         >
-          <div class="mx-3">
-            <h1 class="text-lace text-3xl font-extralight">Blind sats</h1>
+          <div class="shadow-[inset_0_2px_0] shadow-lace/50 dark:shadow-lace/25 flex justify-between sm:rounded-t">
+            <div class="mx-3">
+              <h1 class="text-lace text-3xl font-extralight">Blind sats</h1>
+            </div>
+            <button
+              v-if="darkMode"
+              type="button"
+              @click="darkMode = false"
+              class="w-9 mx-3"
+            >
+              ☀️
+            </button>
+            <button
+              v-else
+              type="button"
+              @click="darkMode = true"
+              class="w-9 mx-3"
+            >
+              🌙
+            </button>
           </div>
-          <button
-            v-if="darkMode"
-            type="button"
-            @click="darkMode = false"
-            class="w-9 mx-3"
-          >
-            ☀️
-          </button>
-          <button
-            v-else
-            type="button"
-            @click="darkMode = true"
-            class="w-9 mx-3"
-          >
-            🌙
-          </button>
         </header>
-        <main class="relative overflow-y-auto">
+        <main class="relative overflow-y-auto dark:bg-oxford-700">
           <template v-if="view === View.Home">
             <Home @open-wallet="openWallet" :wallets="wallets" />
           </template>
@@ -54,7 +56,11 @@
           </template>
 
           <template v-else-if="view === View.Wallet">
-            <Wallet @set-view="setView" :wallet="currentWallet" />
+            <Wallet
+              @set-view="setView"
+              :wallet="currentWallet"
+              :dark-mode="darkMode"
+            />
           </template>
 
           <template v-else-if="view === View.eCash">
@@ -74,7 +80,7 @@
           v-if="view === View.Home"
           type="button"
           @click="setView(View.AddWallet)"
-          class="bg-orange rounded-full text-lace absolute bottom-3 right-3 p-5 hover:brightness-95 active:brightness-90"
+          class="bg-orange dark:bg-harvest-gold rounded-full text-lace absolute bottom-3 right-3 p-5 hover:brightness-95 active:brightness-90"
         >
           <img src="/plus.svg" />
         </button>

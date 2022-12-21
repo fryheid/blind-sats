@@ -11,14 +11,14 @@
           <button
             type="button"
             @click="modals.backup = true"
-            class="btn bg-slate-400"
+            class="btn bg-slate-400 dark:bg-slate-400"
           >
             Backup
           </button>
           <button
             type="button"
             @click="modals.forget = true"
-            class="btn bg-slate-400"
+            class="btn bg-slate-400 dark:bg-slate-400"
           >
             Forget
           </button>
@@ -44,7 +44,7 @@
         <button
           type="button"
           @click="$emit('forgetWallet', wallet.wallet_key)"
-          class="btn bg-slate-400 mr-3"
+          class="btn bg-slate-400 dark:bg-slate-400 mr-3"
         >
           Yes, forget
         </button>

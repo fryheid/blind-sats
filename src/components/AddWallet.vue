@@ -12,7 +12,7 @@
     <button
       type="button"
       @click="$emit('setView', View.RestoreWallet)"
-      class="text-light-blue underline mt-3"
+      class="text-light-blue dark:text-boy-blue underline mt-3"
     >
       Or import an already existing wallet
     </button>

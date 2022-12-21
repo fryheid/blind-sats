@@ -4,7 +4,7 @@
       v-for="wallet in wallets"
       :key="wallet.wallet_name"
       @click="$emit('openWallet', wallet)"
-      class="border-b-[1px] border-brown"
+      class="border-b-[1px] border-brown dark:border-lace"
     >
       <button type="button" class="w-full flex justify-between p-3">
         <Avatar :wallet-name="wallet.wallet_name" />
