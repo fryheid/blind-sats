@@ -75,7 +75,7 @@
           type="email"
           id="lightning_address"
           name="Lightning address"
-          class="border-[1px] border-brown dark:border-lace dark:bg-oxford-600 rounded p-2 focus-visible:-outline-offset-1 focus-visible:outline-orange dark:focus-visible:outline-harvest-gold"
+          class="input"
           required
         />
 
@@ -84,7 +84,7 @@
           type="number"
           id="amount"
           name="Amount (in sats)"
-          class="border-[1px] border-brown dark:border-lace dark:bg-oxford-600 rounded p-2 focus-visible:-outline-offset-1 focus-visible:outline-orange dark:focus-visible:outline-harvest-gold"
+          class="input"
           required
           min="1"
         />
