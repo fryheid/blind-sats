@@ -60,7 +60,7 @@
         :size="200"
         level="L"
         background="#fff7e9"
-        :foreground="[darkMode ? '#0F2743' : '#1746a2']"
+        :foreground="darkMode ? '#0F2743' : '#1746a2'"
         class="mt-4 dark:border-8 dark:border-lace dark:rounded"
       />
       <p class="text-lg">{{ wallet.lightning_address }}</p>
