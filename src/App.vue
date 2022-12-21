@@ -9,7 +9,7 @@
         <header
           class="bg-dark-blue dark:bg-oxford-900 sm:rounded-t shadow-md shadow-brown/25 dark:shadow-oxford-900/25 z-20"
         >
-          <div class="shadow-[inset_0_2px_0] shadow-lace/50 dark:shadow-lace/25 flex justify-between sm:rounded-t">
+          <div class="shadow-[inset_0_2px_0] sm:shadow-lace/50 dark:shadow-lace/25 flex justify-between sm:rounded-t">
             <div class="mx-3">
               <h1 class="text-lace text-3xl font-extralight">Blind sats</h1>
             </div>
