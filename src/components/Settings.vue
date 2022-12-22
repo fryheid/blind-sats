@@ -38,7 +38,7 @@
     </tailwind-modal>
 
     <tailwind-modal v-model="modals.forget">
-      <p>
+      <p class="opacity-80">
         Are you sure you want to remove your account information (wallet name &
         private key) from this device?
       </p>
