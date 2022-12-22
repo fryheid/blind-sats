@@ -1,6 +1,5 @@
 <template>
   <svg
-    class="w-8 pr-2 stroke-lace/90"
     width="16"
     height="16"
     viewBox="0 0 16 16"
