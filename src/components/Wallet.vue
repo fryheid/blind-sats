@@ -9,9 +9,13 @@
     </section>
 
     <div class="columns-1 md:columns-2 w-full mt-5">
-      <fieldset class="border-2 border-light-blue dark:border-boy-blue rounded pb-3 px-1">
+      <fieldset
+        class="border-2 border-light-blue dark:border-boy-blue rounded pb-3 px-1"
+      >
         <legend>
-          <h3 class="text-light-blue dark:text-boy-blue text-xl font-bold px-2">Lightning ⚡</h3>
+          <h3 class="text-light-blue dark:text-boy-blue text-xl font-bold px-2">
+            Lightning ⚡
+          </h3>
         </legend>
         <div class="flex justify-between mx-2">
           <button
@@ -112,17 +116,11 @@
       </form>
     </tailwind-modal> -->
 
-    <div class="absolute bottom-0 md:top-3 md:bottom-auto w-full flex justify-between mb-3">
-      <button
-        @click="$emit('setView', View.Home)"
-        type="button"
-      >
-        ← back
-      </button>
-      <button
-        @click="$emit('setView', View.Settings)"
-        type="button"
-      >
+    <div
+      class="absolute bottom-0 md:top-3 md:bottom-auto w-full flex justify-between mb-3"
+    >
+      <button @click="$emit('setView', View.Home)" type="button">← back</button>
+      <button @click="$emit('setView', View.Settings)" type="button">
         ⚙️ settings
       </button>
     </div>
