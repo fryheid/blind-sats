@@ -19,7 +19,7 @@
 
     <div class="columns-1 md:columns-2 w-full mt-5">
       <fieldset
-        class="border-2 border-light-blue dark:border-boy-blue rounded pb-3 px-1"
+        class="border-2 border-light-blue dark:border-boy-blue rounded py-3 px-1"
       >
         <legend>
           <h3 class="text-light-blue dark:text-boy-blue text-xl font-bold px-2">
@@ -44,7 +44,7 @@
         </div>
       </fieldset>
 
-      <!-- <fieldset class="border-2 border-orange rounded pb-3 px-1 mt-5">
+      <!-- <fieldset class="border-2 border-orange rounded py-3 px-1 mt-5">
         <legend>
           <h3 class="text-orange text-xl font-bold px-2">eCash 💵</h3>
         </legend>
