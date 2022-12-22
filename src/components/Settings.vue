@@ -1,6 +1,6 @@
 <template>
   <div class="h-full mx-3 pt-5 md:pt-11 relative">
-    <h2 class="text-2xl font-bold">Settings</h2>
+    <h2 class="text-lg">Settings</h2>
 
     <div class="md:columns-2">
       <fieldset class="border-2 border-slate-400 rounded pb-3 px-1">
