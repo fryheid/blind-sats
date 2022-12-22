@@ -42,7 +42,7 @@
         Are you sure you want to remove your account information (wallet name &
         private key) from this device?
       </p>
-      <div class="flex mt-3 justify-end">
+      <div class="flex mt-3 justify-between sm:justify-end">
         <button
           type="button"
           @click="$emit('forgetWallet', wallet.wallet_key)"
