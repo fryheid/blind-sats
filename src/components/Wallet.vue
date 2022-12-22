@@ -24,7 +24,7 @@
           <button
             type="button"
             @click="modals.lightning.send = true"
-            class="btn"
+            class="btn-outline"
           >
             Send
           </button>
