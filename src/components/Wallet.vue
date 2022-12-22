@@ -4,7 +4,16 @@
       <Avatar :wallet-name="wallet.wallet_name" />
       <div class="ml-2">
         <h2 class="text-lg opacity-80">{{ wallet.wallet_name }}</h2>
-        <p class="text-2xl font-bold">{{ wallet.balance }} sats</p>
+        <div class="flex">
+          <p class="text-2xl font-bold">{{ wallet.balance }} sats</p>
+          <p
+            @click="spin = !spin"
+            class="px-[7px] text-2xl"
+            :class="{ 'animate-spin': spin }"
+          >
+            ↻
+          </p>
+        </div>
       </div>
     </section>
 
@@ -136,6 +145,8 @@ import QrcodeVue from "qrcode.vue";
 
 defineProps(["wallet", "darkMode"]);
 defineEmits(["setView"]);
+
+const spin = ref(false);
 
 const modals = ref({
   lightning: {
