@@ -1,18 +1,18 @@
 <template>
   <div class="h-full flex flex-col justify-between mx-3 py-5">
     <section>
-      <p class="opacity-80">
-        This is your new wallet! Write down your private key on a piece of paper
-        (don't store it digitally)
-      </p>
+      <div class="opacity-80">
+        <p>
+          This is your new wallet! Write down your private key on a piece of
+          paper (don't store it digitally)
+        </p>
 
-      <div class="text-xl">
-        <p class="font-bold mt-3 opacity-80">Wallet name</p>
-        <p class="opacity-80">{{ currentWallet.wallet_name }}</p>
+        <p class="mt-3">Wallet name</p>
+        <p class="font-bold">{{ currentWallet.wallet_name }}</p>
 
-        <p class="font-bold mt-3">Private key</p>
-        <p>{{ currentWallet.wallet_key }}</p>
+        <p class="mt-3">Private key</p>
       </div>
+      <p class="font-bold text-4xl">{{ currentWallet.wallet_key }}</p>
     </section>
 
     <section>
