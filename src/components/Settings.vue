@@ -27,12 +27,14 @@
     </div>
 
     <tailwind-modal v-model="modals.backup">
-      <p>
-        Write down your private key on a piece of paper (not online) and store
-        it safely. This private key is used to access your funds.
-      </p>
-      <p class="font-bold mt-3">Private key</p>
-      <p>{{ wallet.wallet_key }}</p>
+      <div class="opacity-80">
+        <p>
+          Write down your private key on a piece of paper (not online) and store
+          it safely. This private key is used to access your funds.
+        </p>
+        <p class="mt-3">Private key</p>
+      </div>
+      <p class="font-bold text-2xl">{{ wallet.wallet_key }}</p>
     </tailwind-modal>
 
     <tailwind-modal v-model="modals.forget">
