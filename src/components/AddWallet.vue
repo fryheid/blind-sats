@@ -17,18 +17,13 @@
       Or import an already existing wallet
     </button>
 
-    <button
-      @click="$emit('setView', View.Home)"
-      type="button"
-      class="absolute bottom-3 left-0 md:top-3 md:bottom-full"
-    >
-      ← back
-    </button>
+    <BackButton @set-view="$emit('setView', View.Home)" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { View } from "../enum/view";
+import BackButton from "./BackButton.vue";
 
 defineEmits(["setView", "createNewWallet"]);
 </script>

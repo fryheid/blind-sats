@@ -60,19 +60,14 @@
       </div>
     </tailwind-modal>
 
-    <button
-      @click="$emit('setView', View.Wallet)"
-      type="button"
-      class="absolute bottom-3 left-0 md:top-3 md:bottom-full"
-    >
-      ← back
-    </button>
+    <BackButton @set-view="$emit('setView', View.Wallet)" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
 import { View } from "../enum/view";
+import BackButton from "./BackButton.vue";
 import TailwindModal from "./TailwindModal.vue";
 
 defineProps(["wallet"]);

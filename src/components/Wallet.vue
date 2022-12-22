@@ -128,7 +128,10 @@
     <div
       class="absolute bottom-0 md:top-3 md:bottom-auto w-full flex justify-between mb-3"
     >
-      <button @click="$emit('setView', View.Home)" type="button">← back</button>
+      <BackButton
+        @set-view="$emit('setView', View.Home)"
+        class="relative bottom-0 md:top-0"
+      />
       <button @click="$emit('setView', View.Settings)" type="button">
         ⚙️ settings
       </button>
@@ -140,6 +143,7 @@
 import { ref } from "vue";
 import { View } from "../enum/view";
 import Avatar from "./Avatar.vue";
+import BackButton from "./BackButton.vue";
 import TailwindModal from "./TailwindModal.vue";
 import QrcodeVue from "qrcode.vue";
 

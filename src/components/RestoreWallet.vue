@@ -33,19 +33,14 @@
       <button type="submit" class="btn mt-3">Restore</button>
     </form>
 
-    <button
-      @click="$emit('setView', View.AddWallet)"
-      type="button"
-      class="absolute bottom-3 left-0 md:top-3 md:bottom-full"
-    >
-      ← back
-    </button>
+    <BackButton @set-view="$emit('setView', View.AddWallet)" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
 import { View } from "../enum/view";
+import BackButton from "./BackButton.vue";
 
 defineProps(["legacyWallet"]);
 defineEmits(["setView", "restoreWallet"]);
