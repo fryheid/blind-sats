@@ -46,7 +46,7 @@
         <button
           type="button"
           @click="$emit('forgetWallet', wallet.wallet_key)"
-          class="btn bg-slate-400 dark:bg-slate-400 mr-3"
+          class="btn bg-red-300 dark:bg-red-300 border-red-300 dark:border-red-300 text-red-700 mr-3"
         >
           Yes, forget
         </button>
