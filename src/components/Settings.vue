@@ -11,7 +11,7 @@
           <button
             type="button"
             @click="modals.backup = true"
-            class="btn bg-slate-400 dark:bg-slate-400"
+            class="btn bg-slate-400 dark:bg-slate-400 border-slate-400 dark:border-slate-400 text-slate-800"
           >
             Backup
           </button>
