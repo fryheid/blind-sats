@@ -1,6 +1,6 @@
 <template>
   <img
-    class="rounded-full h-[60px] min-w-[60px] bg-lace border-2 border-dark-blue dark:border-none"
+    class="rounded-full h-[60px] min-w-[60px] bg-lace shadow-inner shadow-brown/25"
     :class="{ 'animate-pulse': !loaded }"
     :src="`https://asats.io/anonsats/robohash/${walletName}`"
     @load="loaded = true"
