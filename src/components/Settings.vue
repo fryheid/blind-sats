@@ -18,7 +18,7 @@
           <button
             type="button"
             @click="modals.forget = true"
-            class="btn bg-slate-400 dark:bg-slate-400"
+            class="btn-outline text-slate-400 border-slate-400"
           >
             Forget
           </button>
