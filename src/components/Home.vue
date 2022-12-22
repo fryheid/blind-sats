@@ -6,7 +6,7 @@
         @click="$emit('setView', View.AddWallet)"
         class="btn bg-orange border-orange dark:bg-harvest-gold dark:border-harvest-gold w-full md:w-1/2 flex justify-center items-baseline mt-3"
       >
-        <PlusIcon class="w-8 pr-2 stroke-lace/90" />
+        <PlusIcon class="mr-2 stroke-lace/90" />
         Add wallet
       </button>
     </div>
