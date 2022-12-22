@@ -53,7 +53,7 @@
         <button
           type="button"
           @click="modals.forget = false"
-          class="btn-outline border-slate-400 text-slate-400"
+          class="btn-outline border-slate-400 text-slate-400 dark:bg-oxford-600"
         >
           No, cancel
         </button>
