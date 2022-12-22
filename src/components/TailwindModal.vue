@@ -3,7 +3,7 @@
     v-slot="{ params, close }"
     v-bind="$attrs"
     classes="flex justify-center items-center"
-    content-class="relative flex flex-col max-h-full mx-4 p-4 rounded bg-lace dark:bg-oxford-600 max-w-[600px]"
+    content-class="relative flex flex-col max-h-full mx-4 p-4 pt-6 rounded bg-lace dark:bg-oxford-600 max-w-[600px]"
   >
     <span class="mr-8 text-2xl font-bold">
       <slot name="title"></slot>
