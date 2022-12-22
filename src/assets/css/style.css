@@ -10,10 +10,10 @@ body {
 
 @layer components {
   .btn {
-    @apply bg-light-blue dark:bg-boy-blue text-lace text-xl rounded p-3 hover:brightness-95 active:brightness-90;
+    @apply bg-light-blue dark:bg-boy-blue border-2 border-light-blue dark:border-boy-blue text-lace text-xl rounded p-[10px] hover:brightness-95 active:brightness-90;
   }
   .btn-outline {
-    @apply bg-lace dark:bg-oxford-600 border-2 border-light-blue text-light-blue text-xl rounded p-3 hover:brightness-95 active:brightness-90;
+    @apply bg-lace dark:bg-oxford-600 border-2 border-light-blue text-light-blue text-xl rounded p-[10px] hover:brightness-95 active:brightness-90;
   }
   .input {
     @apply border-[1px] border-brown dark:border-lace dark:bg-oxford-600 rounded p-2 focus-visible:-outline-offset-1 focus-visible:outline-orange dark:focus-visible:outline-harvest-gold;
