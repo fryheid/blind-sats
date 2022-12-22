@@ -31,7 +31,7 @@
           <button
             type="button"
             @click="modals.lightning.receive = true"
-            class="btn text-dark-blue"
+            class="btn"
           >
             Receive
           </button>
