@@ -3,8 +3,8 @@
     <section class="flex">
       <Avatar :wallet-name="wallet.wallet_name" />
       <div class="ml-2">
-        <h2 class="text-2xl font-bold">{{ wallet.wallet_name }}</h2>
-        <p class="text-lg opacity-80">{{ wallet.balance }} sats</p>
+        <h2 class="text-lg opacity-80">{{ wallet.wallet_name }}</h2>
+        <p class="text-2xl font-bold">{{ wallet.balance }} sats</p>
       </div>
     </section>
 

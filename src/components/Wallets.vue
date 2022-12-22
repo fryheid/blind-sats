@@ -9,8 +9,8 @@
       <button type="button" class="w-full flex justify-between p-3">
         <Avatar :wallet-name="wallet.wallet_name" />
         <div class="flex flex-col items-end">
-          <h2 class="text-lg font-bold">{{ wallet.wallet_name }}</h2>
-          <p class="opacity-80">{{ wallet.balance }} sats</p>
+          <h2 class="opacity-80">{{ wallet.wallet_name }}</h2>
+          <p class="text-lg font-bold">{{ wallet.balance }} sats</p>
         </div>
       </button>
     </li>
