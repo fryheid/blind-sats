@@ -6,13 +6,14 @@
         <h2 class="text-lg opacity-80">{{ wallet.wallet_name }}</h2>
         <div class="flex">
           <p class="text-2xl font-bold">{{ wallet.balance }} sats</p>
-          <p
+          <button
+            type="button"
             @click="spin = !spin"
             class="px-[7px] text-2xl"
             :class="{ 'animate-spin': spin }"
           >
             ↻
-          </p>
+          </button>
         </div>
       </div>
     </section>
