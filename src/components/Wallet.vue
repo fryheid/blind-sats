@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full mx-3 pt-5 md:pt-11 relative">
+  <div class="h-full mx-3 pt-5 md:pt-16 relative">
     <section class="flex">
       <Avatar :wallet-name="wallet.wallet_name" />
       <div class="ml-2">
@@ -127,11 +127,11 @@
     </tailwind-modal> -->
 
     <div
-      class="absolute bottom-0 md:top-3 md:bottom-auto w-full flex justify-between mb-3"
+      class="absolute bottom-0 md:top-5 md:bottom-auto w-full flex justify-between mb-3"
     >
       <BackButton
         @set-view="$emit('setView', View.Home)"
-        class="relative bottom-0 md:top-0"
+        class="relative bottom-0 md:!top-0"
       />
       <button @click="$emit('setView', View.Settings)" type="button">
         ⚙️ settings

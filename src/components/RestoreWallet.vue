@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full mx-3 pt-5 md:pt-11 relative">
+  <div class="h-full mx-3 pt-5 md:pt-16 relative">
     <form
       @submit.prevent="$emit('restoreWallet', walletKey, walletName)"
       class="flex flex-col"
