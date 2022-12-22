@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full mx-3 pt-3 md:pt-11 relative">
+  <div class="h-full mx-3 pt-5 md:pt-11 relative">
     <h2 class="text-2xl font-bold">Settings</h2>
 
     <div class="md:columns-2">

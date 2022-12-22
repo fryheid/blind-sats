@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full mx-3 pt-3 md:pt-11 relative">
+  <div class="h-full mx-3 pt-5 md:pt-11 relative">
     <section class="flex">
       <Avatar :wallet-name="wallet.wallet_name" />
       <div class="ml-2">

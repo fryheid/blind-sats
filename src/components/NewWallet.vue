@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full flex flex-col justify-between mx-3 py-3">
+  <div class="h-full flex flex-col justify-between mx-3 py-5">
     <section>
       <p class="opacity-80">
         This is your new wallet! Write down your private key on a piece of paper
