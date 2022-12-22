@@ -33,7 +33,7 @@
         </header>
         <main class="relative overflow-y-auto dark:bg-oxford-700 sm:rounded-b">
           <template v-if="view === View.Home">
-            <Home @open-wallet="openWallet" :wallets="wallets" />
+            <Home @set-view="setView" @open-wallet="openWallet" :wallets="wallets" />
           </template>
 
           <template v-else-if="view === View.AddWallet">
