@@ -1,6 +1,6 @@
 <template>
   <div :class="{ dark: darkMode }">
-    <body
+    <div
       class="flex content-center justify-center bg-lace dark:bg-oxford-800 h-[100dvh] mh-screen text-dark-blue dark:text-lace"
     >
       <div
@@ -85,7 +85,7 @@
           <PlusIcon class="stroke-lace/90" />
         </button>
       </div>
-    </body>
+    </div>
   </div>
 </template>
 
