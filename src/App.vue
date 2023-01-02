@@ -68,7 +68,7 @@
           </template>
 
           <template v-else-if="view === View.Settings">
-            <Settings
+            <WalletSettings
               @set-view="setView"
               @forget-wallet="forgetWallet"
               :wallet="currentWallet"
@@ -99,7 +99,7 @@ import RestoreWallet from "./components/RestoreWallet.vue";
 import NewWallet from "./components/NewWallet.vue";
 import Wallet from "./components/Wallet.vue";
 import eCash from "./components/eCash.vue";
-import Settings from "./components/Settings.vue";
+import WalletSettings from "./components/WalletSettings.vue";
 import PlusIcon from "./components/PlusIcon.vue";
 
 const view = ref(View.Home);
