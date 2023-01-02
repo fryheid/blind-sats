@@ -18,7 +18,7 @@
             <button
               v-if="darkMode"
               type="button"
-              @click="darkMode = false"
+              @click="setDarkMode(false)"
               class="w-8 mx-3"
             >
               ☀️
@@ -26,7 +26,7 @@
             <button
               v-else
               type="button"
-              @click="darkMode = true"
+              @click="setDarkMode(true)"
               class="w-8 mx-3"
             >
               🌙
@@ -110,6 +110,26 @@ import Plus from "./components/icons/Plus.vue";
 
 const view = ref(View.Home);
 const darkMode = ref(false);
+
+onMounted(() => {
+  handleDarkMode();
+});
+
+function handleDarkMode() {
+  const darkModeSetting = localStorage.getItem("dark-mode");
+
+  if (!darkModeSetting) {
+    localStorage.setItem("dark-mode", JSON.stringify(darkMode.value));
+    return;
+  }
+
+  darkMode.value = JSON.parse(darkModeSetting);
+}
+
+function setDarkMode(value: boolean) {
+  darkMode.value = value;
+  localStorage.setItem("dark-mode", JSON.stringify(darkMode.value));
+}
 
 function setView(newView: View) {
   view.value = newView;
