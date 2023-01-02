@@ -82,7 +82,7 @@
           @click="setView(View.AddWallet)"
           class="bg-orange dark:bg-harvest-gold rounded-full text-lace absolute bottom-3 right-3 p-5 hover:brightness-95 active:brightness-90"
         >
-          <PlusIcon class="stroke-lace/90" />
+          <Plus class="stroke-lace/90" />
         </button>
       </div>
     </div>
@@ -100,7 +100,7 @@ import NewWallet from "./components/NewWallet.vue";
 import Wallet from "./components/Wallet.vue";
 import eCash from "./components/eCash.vue";
 import WalletSettings from "./components/WalletSettings.vue";
-import PlusIcon from "./components/PlusIcon.vue";
+import Plus from "./components/icons/Plus.vue";
 
 const view = ref(View.Home);
 const darkMode = ref(false);
