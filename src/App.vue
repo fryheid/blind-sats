@@ -9,7 +9,9 @@
         <header
           class="bg-dark-blue dark:bg-oxford-900 sm:rounded-t shadow-md shadow-brown/25 dark:shadow-oxford-900/25 z-20"
         >
-          <div class="shadow-[inset_0_2px_0] sm:shadow-lace/50 dark:shadow-lace/25 flex justify-between sm:rounded-t">
+          <div
+            class="shadow-[inset_0_2px_0] sm:shadow-lace/50 dark:shadow-lace/25 flex justify-between sm:rounded-t"
+          >
             <div class="mx-3">
               <h1 class="text-lace/80 text-2xl font-extralight">Blind sats</h1>
             </div>
@@ -33,7 +35,11 @@
         </header>
         <main class="relative overflow-y-auto dark:bg-oxford-700 sm:rounded-b">
           <template v-if="view === View.Home">
-            <Home @set-view="setView" @open-wallet="openWallet" :wallets="wallets" />
+            <Home
+              @set-view="setView"
+              @open-wallet="openWallet"
+              :wallets="wallets"
+            />
           </template>
 
           <template v-else-if="view === View.AddWallet">
