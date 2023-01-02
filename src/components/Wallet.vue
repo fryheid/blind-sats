@@ -12,7 +12,7 @@
             class="px-[7px] text-2xl"
             :class="{ 'animate-spin': spin }"
           >
-            ↻
+            <Reload />
           </button>
         </div>
       </div>
@@ -146,6 +146,7 @@ import { View } from "../enum/view";
 import Avatar from "./Avatar.vue";
 import BackButton from "./BackButton.vue";
 import TailwindModal from "./TailwindModal.vue";
+import Reload from "./icons/Reload.vue";
 import QrcodeVue from "qrcode.vue";
 
 defineProps(["wallet", "darkMode"]);
