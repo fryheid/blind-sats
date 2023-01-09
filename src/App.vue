@@ -97,6 +97,7 @@
 
 <script setup lang="ts">
 import { ref, Ref, onMounted } from "vue";
+import { useToast } from "vue-toastification";
 import { Wallet as WalletInterface, WalletInfo } from "./types";
 import { View } from "./enum/view";
 import Home from "./components/Home.vue";
@@ -323,6 +324,9 @@ async function walletCreate() {
     return wallet;
   } catch (e) {
     console.error(e);
+    useToast().error(
+      "Unable to create a new wallet at the moment, please try again later"
+    );
   }
 }
 
