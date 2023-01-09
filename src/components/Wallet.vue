@@ -80,7 +80,10 @@
       <p class="text-lg">{{ wallet.lightning_address }}</p>
     </tailwind-modal>
 
-    <tailwind-modal v-model="modals.lightning.send">
+    <tailwind-modal
+      v-model="modals.lightning.send"
+      @closed="showCommentInput = false"
+    >
       <form @submit.prevent="" class="flex flex-col">
         <label for="lightning_address" class="font-bold"
           >Lightning address ⚡</label
@@ -102,6 +105,26 @@
           required
           min="1"
         />
+
+        <button
+          v-if="!showCommentInput"
+          type="button"
+          @click="showCommentInput = true"
+          class="btn-outline dark:bg-oxford-600 mt-3"
+        >
+          Add comment
+        </button>
+        <template v-else>
+          <label for="comment" class="mt-3">Comment (optional)</label>
+          <textarea
+            type="text"
+            id="comment"
+            name="Comment field"
+            class="input"
+            style="resize: none"
+            rows="3"
+          />
+        </template>
 
         <button type="submit" class="btn mt-5">Send sats</button>
       </form>
@@ -163,4 +186,6 @@ const modals = ref({
     receive: false,
   },
 });
+
+const showCommentInput = ref(false);
 </script>
