@@ -284,29 +284,46 @@ async function createNewWallet() {
 
   try {
     const wallet = await walletCreate();
+
+    if (!wallet) {
+      return;
+    }
+
     wallets.value.push(wallet);
     currentWallet.value = wallet;
 
     view.value = View.NewWallet;
   } catch (e) {
     console.error(e);
-    return;
   }
 }
 
 async function walletCreate() {
-  const response = await fetch("https://asats.io/anonsats/wallet/create", {
-    method: "POST",
-  }).then((response) => response.json());
+  try {
+    const response = await fetch("https://asats.io/anonsats/wallet/create", {
+      method: "POST",
+    }).then((response) => response.json());
 
-  const wallet: WalletInterface = {
-    wallet_key: response.wallet_key,
-    wallet_name: response.wallet_name,
-    lightning_address: response.lightning_address,
-    balance: response.initial_balance,
-  };
+    if (
+      !response.wallet_key &&
+      !response.wallet_name &&
+      !response.lightning_address &&
+      !response.initial_balance
+    ) {
+      return;
+    }
 
-  return wallet;
+    const wallet: WalletInterface = {
+      wallet_key: response.wallet_key,
+      wallet_name: response.wallet_name,
+      lightning_address: response.lightning_address,
+      balance: response.initial_balance,
+    };
+
+    return wallet;
+  } catch (e) {
+    console.error(e);
+  }
 }
 
 function openWallet(wallet: WalletInterface) {
