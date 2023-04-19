@@ -9,7 +9,7 @@
         type="text"
         id="walletKey"
         name="Wallet key"
-        class="border-[1px] border-brown rounded p-2"
+        class="border-[1px] border-brown rounded p-2 text-dark-blue dark:text-oxford-900"
         v-model="walletKey"
         required
       />
