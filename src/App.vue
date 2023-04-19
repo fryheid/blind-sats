@@ -253,20 +253,6 @@ async function getWalletInfo(wallet_key: string): Promise<WalletInfo> {
 }
 
 async function createNewWallet() {
-  const wallet: WalletInterface = {
-    wallet_name: "test-wallet3",
-    wallet_key: "test-key3",
-    lightning_address: "test@asats.io",
-    balance: 0,
-  };
-
-  wallets.value.push(wallet);
-  currentWallet.value = wallet;
-
-  view.value = View.NewWallet;
-
-  return;
-
   try {
     const wallet = await walletCreate();
 
@@ -287,7 +273,16 @@ async function walletCreate() {
   try {
     const response = await fetch("https://asats.io/anonsats/wallet/create", {
       method: "POST",
-    }).then((response) => response.json());
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        use_uuid: false,
+        compact: true,
+      }),
+    })
+      .then((response) => response.json())
+      .catch((error) => console.log("ERROR", error));
 
     if (
       !response.wallet_key &&
