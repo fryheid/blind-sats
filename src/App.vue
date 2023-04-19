@@ -23,30 +23,18 @@
             >
               ☀️
             </button>
-            <button
-              v-else
-              type="button"
-              @click="setDarkMode(true)"
-              class="w-8 mx-3"
-            >
+            <button v-else type="button" @click="setDarkMode(true)" class="w-8 mx-3">
               🌙
             </button>
           </div>
         </header>
         <main class="relative overflow-y-auto dark:bg-oxford-700 sm:rounded-b">
           <template v-if="view === View.Home">
-            <Home
-              @set-view="setView"
-              @open-wallet="openWallet"
-              :wallets="wallets"
-            />
+            <Home @set-view="setView" @open-wallet="openWallet" :wallets="wallets" />
           </template>
 
           <template v-else-if="view === View.AddWallet">
-            <AddWallet
-              @set-view="setView"
-              @create-new-wallet="createNewWallet"
-            />
+            <AddWallet @set-view="setView" @create-new-wallet="createNewWallet" />
           </template>
 
           <template v-else-if="view === View.RestoreWallet">
@@ -62,11 +50,7 @@
           </template>
 
           <template v-else-if="view === View.Wallet">
-            <Wallet
-              @set-view="setView"
-              :wallet="currentWallet"
-              :dark-mode="darkMode"
-            />
+            <Wallet @set-view="setView" :wallet="currentWallet" :dark-mode="darkMode" />
           </template>
 
           <template v-else-if="view === View.eCash">
@@ -336,9 +320,7 @@ function openWallet(wallet: WalletInterface) {
 }
 
 function forgetWallet(wallet_key: string) {
-  wallets.value = wallets.value.filter(
-    (wallet) => wallet.wallet_key !== wallet_key
-  );
+  wallets.value = wallets.value.filter((wallet) => wallet.wallet_key !== wallet_key);
 
   view.value = View.Home;
 }
