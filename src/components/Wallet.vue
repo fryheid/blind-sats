@@ -8,9 +8,9 @@
           <p class="text-2xl font-bold">{{ wallet.balance }} sats</p>
           <button
             type="button"
-            @click="spin = !spin"
+            @click="$emit('checkBalance')"
             class="px-[7px] text-2xl"
-            :class="{ 'animate-spin': spin }"
+            :class="{ 'animate-spin': spinReloadIcon }"
           >
             <Reload />
           </button>
@@ -172,10 +172,8 @@ import TailwindModal from "./TailwindModal.vue";
 import Reload from "./icons/Reload.vue";
 import QrcodeVue from "qrcode.vue";
 
-defineProps(["wallet", "darkMode"]);
-defineEmits(["setView"]);
-
-const spin = ref(false);
+defineProps(["wallet", "spinReloadIcon", "darkMode"]);
+defineEmits(["setView", "checkBalance"]);
 
 const modals = ref({
   lightning: {

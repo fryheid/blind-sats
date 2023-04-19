@@ -50,7 +50,13 @@
           </template>
 
           <template v-else-if="view === View.Wallet">
-            <Wallet @set-view="setView" :wallet="currentWallet" :dark-mode="darkMode" />
+            <Wallet
+              @set-view="setView"
+              @check-balance="checkBalance"
+              :wallet="currentWallet"
+              :spin-reload-icon="spinReloadIcon"
+              :dark-mode="darkMode"
+            />
           </template>
 
           <template v-else-if="view === View.eCash">
@@ -127,6 +133,24 @@ const currentWallet: Ref<WalletInterface> = ref({
   balance: 0,
 });
 const legacyWallet = ref(false);
+
+const spinReloadIcon = ref(false);
+
+async function checkBalance() {
+  spinReloadIcon.value = true;
+  if (currentWallet.value.wallet_key === "") return;
+
+  const { available_balance } = await getWalletInfo(currentWallet.value.wallet_key);
+  spinReloadIcon.value = false;
+
+  if (!available_balance) {
+    useToast().error("Wallet was not found");
+    return;
+  }
+
+  currentWallet.value.balance = available_balance;
+  useToast().success("Balance updated");
+}
 
 const wallets: Ref<Array<WalletInterface>> = ref([
   {
