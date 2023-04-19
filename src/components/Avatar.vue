@@ -2,7 +2,7 @@
   <img
     class="rounded-full h-[60px] min-w-[60px] bg-lace shadow-inner shadow-brown/25"
     :class="{ 'animate-pulse': !loaded }"
-    :src="`https://asats.io/anonsats/robohash/${walletName}`"
+    :src="`https://asats.io/anonsats/robohash/${walletName}?rsizex=64&rsizey=64`"
     @load="loaded = true"
   />
 </template>
