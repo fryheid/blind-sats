@@ -19,27 +19,17 @@
     </section>
 
     <div class="columns-1 md:columns-2 w-full mt-5">
-      <fieldset
-        class="border-2 border-light-blue dark:border-boy-blue rounded py-3 px-1"
-      >
+      <fieldset class="border-2 border-light-blue dark:border-boy-blue rounded py-3 px-1">
         <legend>
           <h3 class="text-light-blue dark:text-boy-blue text-xl font-bold px-2">
             Lightning ⚡
           </h3>
         </legend>
         <div class="flex justify-between mx-2">
-          <button
-            type="button"
-            @click="modals.lightning.receive = true"
-            class="btn"
-          >
+          <button type="button" @click="modals.lightning.receive = true" class="btn">
             Receive
           </button>
-          <button
-            type="button"
-            @click="modals.lightning.send = true"
-            class="btn-outline"
-          >
+          <button type="button" @click="modals.lightning.send = true" class="btn-outline">
             Send
           </button>
         </div>
@@ -80,14 +70,9 @@
       <p class="text-lg">{{ wallet.lightning_address }}</p>
     </tailwind-modal>
 
-    <tailwind-modal
-      v-model="modals.lightning.send"
-      @closed="showCommentInput = false"
-    >
+    <tailwind-modal v-model="modals.lightning.send" @closed="showCommentInput = false">
       <form @submit.prevent="" class="flex flex-col">
-        <label for="lightning_address" class="font-bold"
-          >Lightning address ⚡</label
-        >
+        <label for="lightning_address" class="font-bold">Lightning address ⚡</label>
         <input
           type="email"
           id="lightning_address"
@@ -156,9 +141,7 @@
         @set-view="$emit('setView', View.Home)"
         class="relative bottom-0 md:!top-0"
       />
-      <button @click="$emit('setView', View.Settings)" type="button">
-        ⚙️ settings
-      </button>
+      <button @click="$emit('setView', View.Settings)" type="button">⚙️ settings</button>
     </div>
   </div>
 </template>
