@@ -19,7 +19,10 @@
 
 <script setup lang="ts">
 import Avatar from "./Avatar.vue";
+import { Wallet } from "../types";
 
-defineProps(["wallets"]);
+defineProps<{
+  wallets: Array<Wallet>
+}>();
 defineEmits(["openWallet"]);
 </script>
