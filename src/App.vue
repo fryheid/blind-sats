@@ -144,7 +144,7 @@ async function checkBalance() {
   const { available_balance } = await getWalletInfo(currentWallet.value.wallet_key);
   spinReloadIcon.value = false;
 
-  if (!available_balance) {
+  if (available_balance === null || available_balance === undefined) {
     useToast().error("Wallet was not found");
     return;
   }
