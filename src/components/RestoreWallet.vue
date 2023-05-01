@@ -30,7 +30,7 @@
         />
       </template>
 
-      <button type="submit" class="btn mt-3">Restore</button>
+      <button type="submit" class="btn mt-3 disabled:opacity-50" :disabled="restoring">Restore</button>
     </form>
 
     <BackButton @set-view="$emit('setView', View.AddWallet)" />
@@ -42,7 +42,7 @@ import { ref } from "vue";
 import { View } from "../enum/view";
 import BackButton from "./BackButton.vue";
 
-defineProps(["legacyWallet"]);
+defineProps(["legacyWallet", "restoring"]);
 defineEmits(["setView", "restoreWallet"]);
 
 const walletKey = ref("");

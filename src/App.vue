@@ -42,6 +42,7 @@
               @set-view="setView"
               @restore-wallet="restoreWallet"
               :legacy-wallet="legacyWallet"
+              :restoring="restoring"
             />
           </template>
 
@@ -227,7 +228,10 @@ const wallets: Ref<Array<WalletInterface>> = ref([
   },
 ]);
 
+const restoring = ref(false);
+
 async function restoreWallet(wallet_key: string, wallet_name: string) {
+  restoring.value = true;
   const walletInfo = await getWalletInfo(wallet_key);
 
   if (wallet_name) {
@@ -243,11 +247,13 @@ async function restoreWallet(wallet_key: string, wallet_name: string) {
 
     view.value = View.Wallet;
     legacyWallet.value = false;
+    restoring.value = false;
     return;
   }
 
   if (walletInfo.wallet_name === "not assigned") {
     legacyWallet.value = true;
+    restoring.value = false;
     return;
   }
 
@@ -262,6 +268,7 @@ async function restoreWallet(wallet_key: string, wallet_name: string) {
   currentWallet.value = wallet;
 
   view.value = View.Wallet;
+  restoring.value = false;
 }
 
 async function getWalletInfo(wallet_key: string): Promise<WalletInfo> {
