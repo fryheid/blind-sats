@@ -71,11 +71,12 @@
     </tailwind-modal>
 
     <tailwind-modal v-model="modals.lightning.send" @closed="showCommentInput = false">
-      <form @submit.prevent="" class="flex flex-col">
+      <form @submit.prevent="sendLightningPayment" class="flex flex-col">
         <label for="lightning_address" class="font-bold">Lightning address ⚡</label>
         <input
           type="email"
           id="lightning_address"
+          v-model="transaction.ln_address"
           name="Lightning address"
           class="input"
           required
@@ -85,6 +86,7 @@
         <input
           type="number"
           id="amount"
+          v-model="transaction.ln_amount"
           name="Amount (in sats)"
           class="input"
           required
@@ -104,6 +106,7 @@
           <textarea
             type="text"
             id="comment"
+            v-model="transaction.ln_commment"
             name="Comment field"
             class="input"
             style="resize: none"
@@ -111,7 +114,13 @@
           />
         </template>
 
-        <button type="submit" class="btn mt-5">Send sats</button>
+        <button
+          type="submit"
+          :disabled="sendingLightningPayment"
+          class="btn mt-5 disabled:opacity-80"
+        >
+          Send sats
+        </button>
       </form>
     </tailwind-modal>
 
@@ -148,6 +157,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import { useToast } from "vue-toastification";
 import { View } from "../enum/view";
 import Avatar from "./Avatar.vue";
 import BackButton from "./BackButton.vue";
@@ -155,7 +165,7 @@ import TailwindModal from "./TailwindModal.vue";
 import Reload from "./icons/Reload.vue";
 import QrcodeVue from "qrcode.vue";
 
-defineProps(["wallet", "spinReloadIcon", "darkMode"]);
+const props = defineProps(["wallet", "spinReloadIcon", "darkMode"]);
 defineEmits(["setView", "checkBalance"]);
 
 const modals = ref({
@@ -168,5 +178,37 @@ const modals = ref({
   },
 });
 
+const transaction = ref({
+  wallet_key: props.wallet.wallet_key,
+  ln_address: "",
+  ln_amount: null,
+  ln_commment: "",
+  ln_currency: "SAT",
+});
+
 const showCommentInput = ref(false);
+
+const sendingLightningPayment = ref(false);
+
+async function sendLightningPayment() {
+  sendingLightningPayment.value = true;
+
+  const response = await fetch("https://asats.io/anonsats/wallet/lnpay", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(transaction.value),
+  }).then((response) => response.json());
+
+  sendingLightningPayment.value = false;
+
+  if (response.return_message?.error) {
+    useToast().error(response.return_message.error);
+    return;
+  }
+
+  modals.value.lightning.send = false;
+  useToast().success("Sats sent successfully");
+}
 </script>
